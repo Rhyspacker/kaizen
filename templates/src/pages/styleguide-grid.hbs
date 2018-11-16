@@ -1,0 +1,122 @@
+---
+title: "Grid - Styleguide"
+#body_classes:
+layout: styleguide
+---
+
+<div class="container">
+
+  <ol class="styleguide-breadcrumb">
+    <li class="styleguide-breadcrumb__item"><a href="index.html">Styleguide</a></li>
+    <li class="styleguide-breadcrumb__item active">Grid</li>
+  </ol>
+
+  <h1>Grid</h1>
+  <p>The grid is based on 12 equal width columns.</p>
+  <p>Construct grid using a combination of <code>.row</code> and <code>.col-mq-n</code>, where <strong>mq</strong> indicates the mq breakpoint. mq can be <strong>xs(mobile)</strong>, <strong>sm(mobile landscape)</strong>, <strong>md(tablet)</strong>, <strong>lg(desktop)</strong>, <strong>xl(wide)</strong>. <strong>n</strong> is the number of columns the element should span.
+  <p>For full width columns, no <code>.col-mq-n</code> class is required</p>
+  <p><code>.row</code> should always be within a <code>.container</code> since a negative margin is applied to the row to offset the padding applied to the columns it contains.</p>
+
+  <div class="styleguide-example">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 bg--c">.col-md-4</div>
+        <div class="col-md-4 bg--d">.col-md-4</div>
+        <div class="col-md-4 bg--e">.col-md-4</div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 bg--d">.col-md-3</div>
+        <div class="col-md-6 bg--f">.col-md-6</div>
+        <div class="col-md-3 bg--c">.col-md-3</div>
+      </div>
+      <div class="row">
+        <div class="col-md-8 bg--c">.col-md-3</div>
+        <div class="col-md-4 bg--d">.col-md-6</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="styleguide-example-code">
+    <code><pre>&lt;div class=&quot;container&quot;&gt;
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-md-4 bg--c&quot;&gt;.col-md-4&lt;/div&gt;
+    &lt;div class=&quot;col-md-4 bg--d&quot;&gt;.col-md-4&lt;/div&gt;
+    &lt;div class=&quot;col-md-4 bg--e&quot;&gt;.col-md-4&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-md-3 bg--d&quot;&gt;.col-md-3&lt;/div&gt;
+    &lt;div class=&quot;col-md-6 bg--f&quot;&gt;.col-md-6&lt;/div&gt;
+    &lt;div class=&quot;col-md-3 bg--c&quot;&gt;.col-md-3&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-md-8 bg--c&quot;&gt;.col-md-3&lt;/div&gt;
+    &lt;div class=&quot;col-md-4 bg--d&quot;&gt;.col-md-6&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre></code>
+  </div>
+
+  <h3>Offset and push/pull classes</h3>
+  <p>You can introduce offsets or manipulate column ordering at various breakpoints using the following classes, <code>.col-mq-offset-n</code>,<code>.col-mq-push-n</code> and <code>.col-mq-pull-n</code>. This is useful for ensuring HTML is written in a content driven, accessible & mobile first order but be easily visually manipulated.</p>
+
+  <div class="styleguide-example">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 bg--c">.col-md-4</div>
+        <div class="col-md-3 bg--d">.col-md-3</div>
+        <div class="col-md-4 col-md-offset-1 bg--e">.col-md-4 .col-md-offset-1</div>
+      </div>
+      <div class="row">
+        <div class="col-md-5 col-lg-push-7 bg--d">.col-md-3</div>
+        <div class="col-md-7 col-lg-pull-5 bg--f">.col-md-6</div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="styleguide-example-code">
+    <code><pre>&lt;div class=&quot;container&quot;&gt;
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-md-4 bg--c&quot;&gt;.col-md-4&lt;/div&gt;
+    &lt;div class=&quot;col-md-3 bg--d&quot;&gt;.col-md-3&lt;/div&gt;
+    &lt;div class=&quot;col-md-4 col-md-offset-1 bg--e&quot;&gt;.col-md-4 .col-md-offset-1&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-md-5 col-lg-push-7 bg--d&quot;&gt;.col-md-3&lt;/div&gt;
+    &lt;div class=&quot;col-md-7 col-lg-pull-5 bg--f&quot;&gt;.col-md-6&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre></code>
+  </div>
+
+  <h3>Nesting</h3>
+  <p>You can subdivide the grid by nesting. To do this, place a new <code>.row</code> inside of an existing <code>.col-mq-n</code>. You can now subdivide into 12 sub-columns using the <code>.col-mq-n</code> classes.</p>
+
+  <div class="styleguide-example">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 bg--c">
+          .col-md-6
+          <div class="row">
+            <div class="col-md-4 bg--d">.col-md-4</div>
+            <div class="col-md-8 bg--e">.col-md-8</div>
+          </div>
+        </div>
+        <div class="col-md-6 bg--f">.col-md-6</div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="styleguide-example-code">
+    <code><pre>&lt;div class=&quot;container&quot;&gt;
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-md-6 bg--c&quot;&gt;
+      .col-md-6
+      &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;col-md-4 bg--d&quot;&gt;.col-md-4&lt;/div&gt;
+        &lt;div class=&quot;col-md-8 bg--e&quot;&gt;.col-md-8&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col-md-6 bg--f&quot;&gt;.col-md-6&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre></code>
+  </div>
+
+</div>

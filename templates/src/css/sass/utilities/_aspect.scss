@@ -1,0 +1,77 @@
+// ==============================
+// Aspect
+// ========================================
+
+.aspect--1-1 {
+  @include maintain-ratio(1 1);
+}
+
+.aspect--3-1 {
+  @include maintain-ratio(3 1);
+}
+
+.aspect--3-2 {
+  @include maintain-ratio(3 2);
+}
+
+.aspect--4-3 {
+  @include maintain-ratio(4 3);
+}
+
+.aspect--2-1 {
+  @include maintain-ratio(2 1);
+}
+
+.aspect--16-9 {
+  @include maintain-ratio(16 9);
+}
+
+// Responsive aspect ratio
+//
+.aspect-700--1-1 {
+  @include mq($image-breakpoint) {
+    height: 0;
+    padding-bottom: 100% !important;
+    width: 100%;
+  }
+}
+
+.aspect-700--3-1 {
+  @include mq($image-breakpoint) {
+    height: 0;
+    padding-bottom: 33.33333% !important;
+    width: 100%;
+  }
+}
+
+.aspect-700--3-2 {
+  @include mq($image-breakpoint) {
+    height: 0;
+    padding-bottom: 66.66667% !important;
+    width: 100%;
+  }
+}
+
+.aspect-700--4-3 {
+  @include mq($image-breakpoint) {
+    height: 0;
+    padding-bottom: percentage(3/4) !important;
+    width: 100%;
+  }
+}
+
+.aspect-700--2-1 {
+  @include mq($image-breakpoint) {
+    height: 0;
+    padding-bottom: 50% !important;
+    width: 100%;
+  }
+}
+
+.aspect-700--16-9 {
+  @include mq($image-breakpoint) {
+    height: 0;
+    padding-bottom: percentage(9/16) !important;
+    width: 100%;
+  }
+}

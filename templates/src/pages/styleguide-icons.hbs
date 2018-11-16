@@ -1,0 +1,49 @@
+---
+title: "Icons - Styleguide"
+#body_classes:
+layout: styleguide
+---
+
+<div class="container">
+
+  <ol class="styleguide-breadcrumb">
+    <li class="styleguide-breadcrumb__item"><a href="index.html">Styleguide</a></li>
+    <li class="styleguide-breadcrumb__item active">Icons</li>
+  </ol>
+
+  <h1>Icons</h1>
+  <p><code>.icon</code>. By default icons inherit color from their parent, but if desired, can be colored using <code>.icon--light</code>, <code>.icon--dark</code>, <code>.icon--a</code>, <code>.icon--b</code>, <code>.icon--c</code>, <code>.icon--d</code>, <code>.icon--e</code> and <code>.icon--f</code></p>
+
+  <h3>Cross</h3>
+  <p><code>.icon--cross</code></p>
+
+  <div class="styleguide-example">
+
+    <div class="component-name">
+      <div class="component-name__element">
+      	{{> icon--cross}}
+      	{{> icon--cross icon__classes="icon--light bg--dark"}}
+      	{{> icon--cross icon__classes="icon--dark"}}
+      	{{> icon--cross icon__classes="icon--a"}}
+      	{{> icon--cross icon__classes="icon--b"}}
+      	{{> icon--cross icon__classes="icon--c"}}
+      	{{> icon--cross icon__classes="icon--d"}}
+      	{{> icon--cross icon__classes="icon--e"}}
+      	{{> icon--cross icon__classes="icon--f"}}
+      </div>
+    </div>
+
+  </div>
+
+  <div class="styleguide-example-code">
+    <code><pre>&lt;svg aria-hidden=&quot;true&quot; class=&quot;icon icon--cross{{#if icon__classes }} {{icon__classes}}{{/if}}&quot; width=&quot;{{#if icon__width }}{{icon__width}}{{else}}16{{/if}}&quot; height=&quot;{{#if icon__height }}{{icon__height}}{{else}}14{{/if}}&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 16 14&quot;&gt;&lt;path d=&quot;M136,88l-5-4,5-4a1,1,0,0,0-1-2l-7,5-4-4a1,1,0,0,0-1,1l4,4-6,6c-1,1,1,3,2,2l6-6,5,5A2,2,0,1,0,136,88Z&quot; transform=&quot;translate(-120 -78)&quot;/&gt;&lt;/svg&gt;
+&lt;svg aria-hidden=&quot;true&quot; class=&quot;icon icon--cross icon--light bg--dark{{#if icon__classes }} {{icon__classes}}{{/if}}&quot; width=&quot;{{#if icon__width }}{{icon__width}}{{else}}16{{/if}}&quot; height=&quot;{{#if icon__height }}{{icon__height}}{{else}}14{{/if}}&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 16 14&quot;&gt;&lt;path d=&quot;M136,88l-5-4,5-4a1,1,0,0,0-1-2l-7,5-4-4a1,1,0,0,0-1,1l4,4-6,6c-1,1,1,3,2,2l6-6,5,5A2,2,0,1,0,136,88Z&quot; transform=&quot;translate(-120 -78)&quot;/&gt;&lt;/svg&gt;
+&lt;svg aria-hidden=&quot;true&quot; class=&quot;icon icon--cross icon--dark{{#if icon__classes }} {{icon__classes}}{{/if}}&quot; width=&quot;{{#if icon__width }}{{icon__width}}{{else}}16{{/if}}&quot; height=&quot;{{#if icon__height }}{{icon__height}}{{else}}14{{/if}}&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 16 14&quot;&gt;&lt;path d=&quot;M136,88l-5-4,5-4a1,1,0,0,0-1-2l-7,5-4-4a1,1,0,0,0-1,1l4,4-6,6c-1,1,1,3,2,2l6-6,5,5A2,2,0,1,0,136,88Z&quot; transform=&quot;translate(-120 -78)&quot;/&gt;&lt;/svg&gt;
+&lt;svg aria-hidden=&quot;true&quot; class=&quot;icon icon--cross icon--a{{#if icon__classes }} {{icon__classes}}{{/if}}&quot; width=&quot;{{#if icon__width }}{{icon__width}}{{else}}16{{/if}}&quot; height=&quot;{{#if icon__height }}{{icon__height}}{{else}}14{{/if}}&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 16 14&quot;&gt;&lt;path d=&quot;M136,88l-5-4,5-4a1,1,0,0,0-1-2l-7,5-4-4a1,1,0,0,0-1,1l4,4-6,6c-1,1,1,3,2,2l6-6,5,5A2,2,0,1,0,136,88Z&quot; transform=&quot;translate(-120 -78)&quot;/&gt;&lt;/svg&gt;
+&lt;svg aria-hidden=&quot;true&quot; class=&quot;icon icon--cross icon--b{{#if icon__classes }} {{icon__classes}}{{/if}}&quot; width=&quot;{{#if icon__width }}{{icon__width}}{{else}}16{{/if}}&quot; height=&quot;{{#if icon__height }}{{icon__height}}{{else}}14{{/if}}&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 16 14&quot;&gt;&lt;path d=&quot;M136,88l-5-4,5-4a1,1,0,0,0-1-2l-7,5-4-4a1,1,0,0,0-1,1l4,4-6,6c-1,1,1,3,2,2l6-6,5,5A2,2,0,1,0,136,88Z&quot; transform=&quot;translate(-120 -78)&quot;/&gt;&lt;/svg&gt;
+&lt;svg aria-hidden=&quot;true&quot; class=&quot;icon icon--cross icon--c{{#if icon__classes }} {{icon__classes}}{{/if}}&quot; width=&quot;{{#if icon__width }}{{icon__width}}{{else}}16{{/if}}&quot; height=&quot;{{#if icon__height }}{{icon__height}}{{else}}14{{/if}}&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 16 14&quot;&gt;&lt;path d=&quot;M136,88l-5-4,5-4a1,1,0,0,0-1-2l-7,5-4-4a1,1,0,0,0-1,1l4,4-6,6c-1,1,1,3,2,2l6-6,5,5A2,2,0,1,0,136,88Z&quot; transform=&quot;translate(-120 -78)&quot;/&gt;&lt;/svg&gt;
+&lt;svg aria-hidden=&quot;true&quot; class=&quot;icon icon--cross icon--d{{#if icon__classes }} {{icon__classes}}{{/if}}&quot; width=&quot;{{#if icon__width }}{{icon__width}}{{else}}16{{/if}}&quot; height=&quot;{{#if icon__height }}{{icon__height}}{{else}}14{{/if}}&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 16 14&quot;&gt;&lt;path d=&quot;M136,88l-5-4,5-4a1,1,0,0,0-1-2l-7,5-4-4a1,1,0,0,0-1,1l4,4-6,6c-1,1,1,3,2,2l6-6,5,5A2,2,0,1,0,136,88Z&quot; transform=&quot;translate(-120 -78)&quot;/&gt;&lt;/svg&gt;
+&lt;svg aria-hidden=&quot;true&quot; class=&quot;icon icon--cross icon--e{{#if icon__classes }} {{icon__classes}}{{/if}}&quot; width=&quot;{{#if icon__width }}{{icon__width}}{{else}}16{{/if}}&quot; height=&quot;{{#if icon__height }}{{icon__height}}{{else}}14{{/if}}&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 16 14&quot;&gt;&lt;path d=&quot;M136,88l-5-4,5-4a1,1,0,0,0-1-2l-7,5-4-4a1,1,0,0,0-1,1l4,4-6,6c-1,1,1,3,2,2l6-6,5,5A2,2,0,1,0,136,88Z&quot; transform=&quot;translate(-120 -78)&quot;/&gt;&lt;/svg&gt;
+&lt;svg aria-hidden=&quot;true&quot; class=&quot;icon icon--cross icon--f{{#if icon__classes }} {{icon__classes}}{{/if}}&quot; width=&quot;{{#if icon__width }}{{icon__width}}{{else}}16{{/if}}&quot; height=&quot;{{#if icon__height }}{{icon__height}}{{else}}14{{/if}}&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 16 14&quot;&gt;&lt;path d=&quot;M136,88l-5-4,5-4a1,1,0,0,0-1-2l-7,5-4-4a1,1,0,0,0-1,1l4,4-6,6c-1,1,1,3,2,2l6-6,5,5A2,2,0,1,0,136,88Z&quot; transform=&quot;translate(-120 -78)&quot;/&gt;&lt;/svg&gt;</pre></code>
+  </div>
+</div>

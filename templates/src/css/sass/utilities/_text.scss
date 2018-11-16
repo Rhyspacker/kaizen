@@ -1,0 +1,57 @@
+// ==============================
+// Text
+// ========================================
+
+// ====================
+// color
+// ========================================
+
+// Muted
+.text--muted { color: $text-muted !important; }
+
+// Light
+.text--light { color: $color-white !important; }
+
+// Dark
+.text--dark { color: $color-grey-dark !important; }
+
+// Theme colors
+.text--a { color: $color-a-primary !important; }
+.text--b { color: $color-b-primary !important; }
+.text--c { color: $color-c-primary !important; }
+.text--d { color: $color-d-primary !important; }
+.text--e { color: $color-e-primary !important; }
+.text--f { color: $color-f-primary !important; }
+
+// ====================
+// alignment
+// ========================================
+
+.text--left { text-align: left !important; }
+.text--center { text-align: center !important; }
+.text--right { text-align: right !important; }
+
+// Responsive text alignments
+//
+.text--left-tablet-up { @include mq($from: tablet) { text-align: left !important; } }
+.text--left-desktop-up { @include mq($from: desktop) { text-align: left !important; } }
+.text--left-wide-up { @include mq($from: wide) { text-align: left !important; } }
+.text--center-tablet-up { @include mq($from: tablet) { text-align: center !important; } }
+.text--center-desktop-up { @include mq($from: desktop) { text-align: center !important; } }
+.text--center-wide-up { @include mq($from: wide) { text-align: center !important; } }
+.text--right-tablet-up { @include mq($from: tablet) { text-align: right !important; } }
+.text--right-desktop-up { @include mq($from: desktop) { text-align: right !important; } }
+.text--right-wide-up { @include mq($from: wide) { text-align: right !important; } }
+
+// ====================
+// transformation
+// ========================================
+
+.text--lowercase { text-transform: lowercase !important; }
+.text--uppercase { text-transform: uppercase !important; }
+.text--capitalize { text-transform: capitalize !important; }
+.text--capitalize-first {
+  &::first-letter {
+    text-transform: capitalize !important;
+  }
+}

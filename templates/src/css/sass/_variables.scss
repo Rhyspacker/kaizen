@@ -1,0 +1,294 @@
+// ==============================
+// Variables
+// ========================================
+
+// ====================
+// Table of Contents
+//
+// Colors
+// Options
+// Spacing
+// Borders
+// Links
+// Grid breakpoints
+// Grid gutters
+// Grid containers
+// Grid columns
+// Typography
+// Tranisitions (bootstrap)
+// Components
+// ========================================
+
+// ====================
+// Colors
+// ========================================
+
+// Black
+//
+$color-black: #000;
+
+// White
+//
+$color-white: #fff;
+
+// Grays
+//
+$color-grey: #949494;
+$color-grey-dark: #494b52;
+
+// Theme colors
+//
+$color-a-primary: #4cd147;
+$color-b-primary: #29fa7a;
+$color-c-primary: #befc33;
+$color-d-primary: #fc1561;
+$color-e-primary: #8c60f4;
+$color-f-primary: #29eafd;
+
+// Social icons
+//
+$color-facebook: #3b5998;
+$color-linkedin: #0077b5;
+$color-pinterest: #e7295d; // offical color is #bd081c
+$color-twitter: #55acee;
+$color-whatsapp: #25d366;
+$color-instagram: #5b6ad3;
+$color-youtube: #cd201f;
+
+// Body colors
+//
+$body-bg: $color-white;
+$body-color: $color-grey-dark;
+
+// ====================
+// Options
+// Quickly modify global styling by enabling or
+// disabling optional features.
+// ========================================
+
+$enable-print-styles: true;
+$enable-flexbox: true;
+
+// ====================
+// Spacing
+// ========================================
+
+$spacer: 20px;
+$spacer-x: $spacer;
+$spacer-y: $spacer;
+
+// ====================
+// Borders
+// ========================================
+
+$border-width: 1px;
+$border-color: $color-grey;
+
+// ====================
+// Links
+// ========================================
+
+$link-color: $body-color;
+$link-decoration: underline;
+$link-hover-color: darken($link-color, 15%);
+$link-hover-decoration: none;
+$link-hover-transition-time: 0.15s;
+
+// ====================
+// Breakpoints
+// ========================================
+
+$page-max-width: 1920px;
+
+$image-breakpoint: 700px;
+
+$mq-breakpoints: (
+  mobile:  320px,
+  mobileLandscape: 480px,
+  tablet:  768px,
+  tabletLandscape: 1024px,
+  desktop: 1025px,
+  wide:    1441px
+);
+
+// ====================
+// Grid: Containers and Gutters
+// ========================================
+
+$gutter-width: 20px;
+
+// Max widths for .container _layout.scss
+//
+$container-max-widths: (
+  tablet:  768px,
+  desktop: 992px,
+  wide:    1280px
+);
+
+
+// ====================
+// Typography
+// ========================================
+
+// Font, line-height, and color for body text, headings, and more.
+
+$font-family-sans-serif: "Helvetica Neue", Arial, sans-serif !default;
+$font-family-serif: Georgia, "Times New Roman", Times, serif;
+$font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+$font-family-base: $font-family-sans-serif;
+
+$font-size-base: 1rem;
+$font-size-html: 18px;
+$font-size-html-desktop: 22px;
+
+$font-size-xs: 12px;
+$font-size-sm: 14px;
+$font-size-md: 16px;
+
+$font-weight-normal: normal;
+$font-weight-bold: bold;
+
+$font-weight-base: $font-weight-normal;
+$line-height-base: 1.3335; // 24px based on 18px base font
+$line-height-base-desktop: 1.4545454545; // 32px based on 22px base font
+
+$font-size-h1: 34px;
+$font-size-h1-tablet: 38px;
+$font-size-h1-desktop: 56px;
+
+$font-size-h2: 24px;
+$font-size-h2-tablet: 28px;
+$font-size-h2-desktop: 36px;
+
+$font-size-h3: 22px;
+$font-size-h3-tablet: 26px;
+$font-size-h3-desktop: 30px;
+
+$font-size-h4: 18px;
+$font-size-h4-tablet: 22px;
+$font-size-h4-desktop: 26px;
+
+$font-size-h5: 16px;
+$font-size-h5-tablet: 18px;
+$font-size-h5-desktop: 24px;
+
+$font-size-h6: 16px;
+$font-size-h6-tablet: 18px;
+$font-size-h6-desktop: 24px;
+
+$headings-margin-bottom: ($spacer / 2);
+$headings-font-family: $font-family-base;
+$headings-font-weight: bold;
+$headings-line-height: 1.1;
+$headings-color: inherit;
+
+// Display sizing
+//
+$display1-font-family: $font-family-base;
+$display1-font-size: 30px;
+$display1-font-size-tablet: 50px;
+$display1-font-size-desktop: 64px;
+$display1-font-weight: bold;
+$display1-line-height: 1;
+
+$display2-font-family: $font-family-base;
+$display2-font-size: 16px;
+$display2-font-size-tablet: 20px;
+$display2-font-weight: bold;
+$display2-line-height: 1.2;
+$display2-font-size-card: 12px;
+$display2-font-size-card-tablet: 14px;
+
+$display3-font-family: $font-family-base;
+$display3-font-size: 24px;
+$display3-font-size-tablet: 34px;
+$display3-font-size-desktop: 42px;
+$display3-font-weight: bold;
+$display3-line-height: 1;
+
+// Lead
+//
+$lead-font-size: 18px;
+$lead-font-weight: 500;
+$lead-line-height: 30px;
+
+// Muted
+//
+$text-muted: $color-grey;
+
+// Abbreviation
+//
+$abbr-border-color: $color-grey;
+
+// Blockquote
+$blockquote-small-color: $color-grey;
+$blockquote-font-size: ($font-size-base * 1.0909090909);
+$blockquote-border-color: lighten($color-a-primary, 25%);
+$blockquote-border-width: .25rem !default;
+
+// Lists
+//
+$dt-font-weight: bold;
+$list-inline-padding: 5px;
+
+// ====================
+// Z-index master list
+// ========================================
+
+// ====================
+// Components
+// ========================================
+
+// ====================
+// Tables
+// Customizes the `.table` component with basic values, each used across all table variations
+// ========================================
+
+$table-cell-padding: 12px;
+$table-sm-cell-padding: 4px;
+
+$table-bg: transparent;
+$table-bg-accent: #f9f9f9;
+$table-bg-hover: #f5f5f5;
+$table-bg-active: $table-bg-hover;
+
+$table-border-width: $border-width;
+$table-border-color: $color-grey;
+
+// ====================
+// Buttons
+// ========================================
+
+$btn-border-radius: 0px;
+$btn-font-family: $font-family-base;
+$btn-font-size: 16px;
+$btn-font-weight: bold;
+$btn-line-height: 40px;
+$btn-padding-x: 20px;
+$btn-padding-y: 0px;
+$btn-block-spacing-y: 8px;
+$input-btn-border-width: $border-width;
+
+// Small button
+//
+$btn-sm-border-radius: 0px;
+$btn-sm-font-size: 14px;
+$btn-sm-font-weight: 400;
+$btn-sm-line-height: 28px;
+$btn-sm-padding-x: 14px;
+$btn-sm-padding-y: 0px;
+
+// ====================
+// Forms
+// ========================================
+
+$cursor-disabled: not-allowed;
+
+// ====================
+// Breadcrumbs
+// ========================================
+
+$breadcrumb-padding-y: 4px;
+$breadcrumb-item-padding: 4px;
+$breadcrumb-divider-color: $color-d-primary;
+$breadcrumb-divider: "/";

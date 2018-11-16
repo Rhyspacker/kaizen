@@ -1,0 +1,23 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>{{{ title }}} | {{capitalize project.shortname }}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="/css/{{ project.shortname }}.main.css" rel="stylesheet">
+<link href="/css/{{ project.shortname }}.styleguide.css" rel="stylesheet">
+</head>
+<body{{#if body_classes}} class="{{ body_classes }}"{{/if}}>
+<div class="page">
+	<div class="styleguide-header">
+	  <div class="container">
+	    <h1>{{capitalize project.shortname }} <small>Styleguide</small></h1>
+	  </div>
+	</div>
+
+	{% body %}
+</div>
+<script src="/js/{{ project.shortname }}.main.js"></script>
+</body>
+</html>

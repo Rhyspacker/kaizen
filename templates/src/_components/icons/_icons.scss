@@ -1,0 +1,77 @@
+// ==============================
+// Icons
+// ========================================
+
+.icon {
+  display: inline-block;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+// ==============================
+// color modifiers
+// ========================================
+
+.icon--light {
+  fill: $color-white;
+
+  path {
+    fill: $color-white;
+  }
+}
+
+.icon--dark {
+  fill: $color-grey-dark;
+
+  path {
+    fill: $color-grey-dark;
+  }
+}
+
+.icon--a {
+  fill: $color-a-primary;
+
+  path {
+    fill: $color-a-primary;
+  }
+}
+
+.icon--b {
+  fill: $color-b-primary;
+
+  path {
+    fill: $color-b-primary;
+  }
+}
+
+.icon--c {
+  fill: $color-c-primary;
+
+  path {
+    fill: $color-c-primary;
+  }
+}
+
+.icon--d {
+  fill: $color-d-primary;
+
+  path {
+    fill: $color-d-primary;
+  }
+}
+
+.icon--e {
+  fill: $color-e-primary;
+
+  path {
+    fill: $color-e-primary;
+  }
+}
+
+.icon--f {
+  fill: $color-f-primary;
+
+  path {
+    fill: $color-f-primary;
+  }
+}

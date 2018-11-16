@@ -1,0 +1,230 @@
+// ==============================
+// Styleguide
+// ========================================
+
+
+// ====================
+// Mixins
+// ========================================
+
+@import "mq";
+@import "mixins/clearfix";
+@import "mixins/hover";
+@import "variables";
+
+// ==============================
+// Styleguide breadcrumb
+// ========================================
+
+.styleguide-breadcrumb {
+  font-size: $font-size-base;
+  font-weight: 400;
+  list-style: none;
+  margin-bottom: $spacer-y;
+  padding: $breadcrumb-padding-y 0;
+  @include clearfix;
+}
+
+.styleguide-breadcrumb__item {
+  float: left;
+
+  + .styleguide-breadcrumb__item::before {
+    color: $breadcrumb-divider-color;
+    content: "#{$breadcrumb-divider}";
+    display: inline-block; // Suppress underlining of the separator in modern browsers
+    padding-right: $breadcrumb-item-padding;
+    padding-left: $breadcrumb-item-padding;
+  }
+
+  // IE9-11 hack to properly handle hyperlink underlines for breadcrumbs built
+  // without `<ul>`s. The `::before` pseudo-element generates an element
+  // *within* the .breadcrumb__item and thereby inherits the `text-decoration`.
+  //
+  // To trick IE into suppressing the underline, we give the pseudo-element an
+  // underline and then immediately remove it.
+  + .styleguide-breadcrumb-item:hover::before {
+    text-decoration: underline;
+  }
+  + .styleguide-breadcrumb-item:hover::before {
+    text-decoration: none;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    @include hover {
+      text-decoration: underline;
+    }
+  }
+
+  // Hide the last item on mobile
+  &:nth-last-child(1) {
+    @include mq($until: tablet) {
+      display: none;
+    }
+  }
+}
+
+// ====================
+// Styleguide header
+// ========================================
+
+.styleguide-header {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 0 5px;
+  margin-bottom: 32px;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  h1 {
+    color: $color-c-primary;
+    font-size: 30px;
+    font-weight: 400;
+
+    small {
+      color: #c7c7c7;
+    }
+  }
+}
+
+code {
+  color: #660000;
+}
+
+// ====================
+// Styleguide headings
+// ========================================
+
+.styleguide-h2 {
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+.styleguide-h4 {
+  border-bottom: 2px solid #f1f1f1;
+  color: #333;
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: 16px;
+  padding-bottom: 5px;
+}
+
+.styleguide-h5 {
+  color: #333;
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+// ====================
+// Styleguide section
+// ========================================
+
+.styleguide-section {
+  clear: both;
+  margin: 0 0 64px;
+
+  @include clearfix();
+}
+
+// ====================
+// Styleguide example
+// ========================================
+
+.styleguide-example {
+  border: 2px solid #f2f2f2;
+  margin-bottom: 32px;
+  padding: 32px;
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+
+  + .styleguide-example-code {
+    margin-top: -32px;
+  }
+}
+
+.styleguide-example-split {
+  display: flex;
+
+  .styleguide-example {
+    flex: 1 1 auto;
+  }
+}
+
+.styleguide-example-code {
+  background-color: #f7f7f9;
+  margin-bottom: 32px;
+  overflow: scroll;
+  padding: 16px 32px;
+
+  pre {
+    margin: 0;
+  }
+  code {
+    margin: 0;
+  }
+}
+
+.styleguide-example--images {
+  img {
+    display: block;
+    max-width: 100%; // Part 1: Set a maximum relative to the parent
+    height: auto; // Part 2: Scale the height according to the width, otherwise you get stretching
+  }
+}
+
+.styleguide-example-bg {
+  background-color: darken(#f2f2f2,30%);
+  color: #fff;
+}
+
+.styleguide-example-box {
+  background-color: $color-grey;
+  padding: $spacer;
+}
+
+// ====================
+// Styleguide color
+// ========================================
+
+.styleguide-color-col {
+  margin-bottom: 40px;
+  text-align: center;
+
+  @include mq($from: tablet) {
+    float: left;
+    margin-bottom: 20px;
+    width: 11.6%;
+    @include clearfix;
+
+    & + .styleguide-color-col {
+      margin-left: 1%;
+    }
+  }
+
+  > p {
+    @include mq($from: tablet) {
+      min-height: 100px;
+    }
+  }
+
+  > div {
+    display: table;
+    height: 100px;
+    text-align: center;
+    width: 100%;
+
+    > p {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+}

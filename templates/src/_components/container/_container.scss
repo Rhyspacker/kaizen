@@ -1,0 +1,23 @@
+// ====================
+// Container
+// ========================================
+
+@mixin container() {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $gutter-width/2;
+  padding-right: $gutter-width/2;
+
+  @each $mq-breakpoints, $container-max-width in $container-max-widths {
+    @include mq($from: $mq-breakpoints) {
+      max-width: $container-max-width;
+    }
+  }
+}
+.container {
+  @include container();
+
+  @include mq($media-type: print) {
+    padding: 0;
+  }
+}

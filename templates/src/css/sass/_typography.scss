@@ -1,0 +1,329 @@
+// ==============================
+// Typography
+// ========================================
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input, textarea, select {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// ====================
+// fonts
+// ========================================
+
+// @font-face {
+//   font-family: 'font-name';
+//   font-weight: normal;
+//   font-style: normal;
+//   src: url('/files/fonts/font-name/font-name.eot'); /* IE9 Compat Modes */
+//   src: url('/files/fonts/font-name/font-name.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+//        url('/files/fonts/font-name/font-name.woff2') format('woff2'), /* Super Modern Browsers */
+//        url('/files/fonts/font-name/font-name.woff') format('woff'), /* Pretty Modern Browsers */
+//        url('/files/fonts/font-name/font-name.ttf') format('truetype');
+// }
+
+// @font-face {
+//   font-family: 'font-name';
+//   font-weight: bold;
+//   font-style: normal;
+//   src: url('/files/fonts/font-name/font-name.eot'); /* IE9 Compat Modes */
+//   src: url('/files/fonts/font-name/font-name.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+//        url('/files/fonts/font-name/font-name.woff2') format('woff2'), /* Super Modern Browsers */
+//        url('/files/fonts/font-name/font-name.woff') format('woff'), /* Pretty Modern Browsers */
+//        url('/files/fonts/font-name/font-name.ttf') format('truetype');
+// }
+
+// @font-face {
+//   font-family: 'font-name';
+//   font-weight: light;
+//   font-style: normal;
+//   src: url('/files/fonts/font-name/font-name.eot'); /* IE9 Compat Modes */
+//   src: url('/files/fonts/font-name/font-name.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+//        url('/files/fonts/font-name/font-name.woff2') format('woff2'), /* Super Modern Browsers */
+//        url('/files/fonts/font-name/font-name.woff') format('woff'), /* Pretty Modern Browsers */
+//        url('/files/fonts/font-name/font-name.ttf') format('truetype');
+// }
+
+// ====================
+// Headings
+// ========================================
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  color: $headings-color;
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  line-height: $headings-line-height;
+  margin-bottom: $headings-margin-bottom;
+  text-decoration: none;
+
+  a {
+    text-decoration: inherit;
+    color: inherit;
+  }
+}
+
+h1 {
+  font-size: $font-size-h1;
+
+  @include mq($from: tablet) {
+    font-size: $font-size-h1-tablet;
+  }
+
+  @include mq($from: desktop) {
+    font-size: $font-size-h1-desktop;
+  }
+}
+
+h2 {
+  font-size: $font-size-h2;
+
+  @include mq($from: tablet) {
+    font-size: $font-size-h2-tablet;
+  }
+
+  @include mq($from: desktop) {
+    font-size: $font-size-h2-desktop;
+  }
+}
+
+h3 {
+  font-size: $font-size-h3;
+
+  @include mq($from: tablet) {
+    font-size: $font-size-h3-tablet;
+  }
+
+  @include mq($from: desktop) {
+    font-size: $font-size-h3-desktop;
+  }
+}
+
+h4 {
+  font-size: $font-size-h4;
+
+  @include mq($from: tablet) {
+    font-size: $font-size-h4-tablet;
+  }
+
+  @include mq($from: desktop) {
+    font-size: $font-size-h4-desktop;
+  }
+}
+
+h5 {
+  font-size: $font-size-h5;
+
+  @include mq($from: tablet) {
+    font-size: $font-size-h5-tablet;
+  }
+
+  @include mq($from: desktop) {
+    font-size: $font-size-h5-desktop;
+  }
+}
+
+h6 {
+  font-size: $font-size-h6;
+
+  @include mq($from: tablet) {
+    font-size: $font-size-h6-tablet;
+  }
+
+  @include mq($from: desktop) {
+    font-size: $font-size-h6-desktop;
+  }
+}
+
+// These declarations are kept separate from and placed after
+// the previous tag-based declarations so that the classes beat the tags in
+// the CSS cascade, and thus <h1 class="h2"> will be styled like an h2.
+
+.h1 {
+  font-size: $font-size-h1;
+
+  @include mq($from: tablet) {
+    font-size: $font-size-h1-tablet;
+  }
+
+  @include mq($from: desktop) {
+    font-size: $font-size-h1-desktop;
+  }
+}
+
+.h2 {
+  font-size: $font-size-h2;
+
+  @include mq($from: tablet) {
+    font-size: $font-size-h2-tablet;
+  }
+
+  @include mq($from: desktop) {
+    font-size: $font-size-h2-desktop;
+  }
+}
+
+.h3 {
+  font-size: $font-size-h3;
+
+  @include mq($from: tablet) {
+    font-size: $font-size-h3-tablet;
+  }
+
+  @include mq($from: desktop) {
+    font-size: $font-size-h3-desktop;
+  }
+}
+
+.h4 {
+  font-size: $font-size-h4;
+
+  @include mq($from: tablet) {
+    font-size: $font-size-h4-tablet;
+  }
+
+  @include mq($from: desktop) {
+    font-size: $font-size-h4-desktop;
+  }
+}
+
+.h5 {
+  font-size: $font-size-h5;
+
+  @include mq($from: tablet) {
+    font-size: $font-size-h5-tablet;
+  }
+
+  @include mq($from: desktop) {
+    font-size: $font-size-h5-desktop;
+  }
+}
+
+.h6 {
+  font-size: $font-size-h6;
+
+  @include mq($from: tablet) {
+    font-size: $font-size-h6-tablet;
+  }
+
+  @include mq($from: desktop) {
+    font-size: $font-size-h6-desktop;
+  }
+}
+
+// ====================
+// Display text
+// ========================================
+
+// Set h1 through h6 according to typical heading use, 
+// if additional styles are needed setup display classes
+// for recurring special use cases
+//
+.display-1 {
+  font-family: $display1-font-family;
+  font-size: $display1-font-size;
+  font-weight: $display1-font-weight;
+  line-height: $display1-line-height;
+
+  @include mq($from: tablet) {
+    font-size: $display1-font-size-tablet;
+  }
+
+  @include mq($from: desktop) {
+    font-size: $display1-font-size-desktop;
+  }
+}
+
+.display-2 {
+  font-family: $display2-font-family;
+  font-size: $display2-font-size;
+  font-weight: $display2-font-weight;
+  line-height: $display2-line-height;
+  text-transform: uppercase;
+
+  @include mq($from: tablet) {
+    font-size: $display2-font-size-tablet;
+  }
+}
+
+.display-3 {
+  font-family: $display3-font-family;
+  font-size: $display3-font-size;
+  font-weight: $display3-font-weight;
+  line-height: $display3-line-height;
+
+  @include mq($from: tablet) {
+    font-size: $display3-font-size-tablet;
+  }
+}
+
+// ====================
+// body copy
+// ========================================
+
+// Leave p margin-bottom as _reboot’s default 1rem
+// p { margin-bottom: $spacer; }
+
+.lead {
+  font-size: $lead-font-size;
+  font-weight: $lead-font-weight;
+  line-height: $lead-line-height;
+}
+
+// ====================
+// lists
+// ========================================
+
+.list--unstyled {
+  @include list-unstyled;
+}
+
+.list--inline {
+  @include list-unstyled;
+
+  > li {
+    display: inline-block;
+
+    &:not(:last-child) {
+      margin-right: $list-inline-padding;
+    }
+  }
+}
+
+// List horizontal
+// used on dl
+//
+.list-horizontal {
+  @include mq($from: tablet) {
+    display: flex;
+    flex-wrap: wrap;
+
+    dt {
+      flex: 1 0 25%;
+    }
+
+    dd {
+      flex: 1 0 75%;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+// ====================
+// line break
+// ========================================
+
+// Can be combined with visibility utility classes
+// for responsive line breaks
+//
+.br {
+  display: block;
+}

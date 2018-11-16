@@ -1,0 +1,26 @@
+// ==============================
+// Figure
+// ========================================
+
+.figure {
+  margin-bottom: ($spacer-y * 2);
+}
+
+.figure__media {
+  display: block;
+  position: relative;
+
+  img {
+    @include img-fluid;
+
+    // Until tablet allow the image to be 100% of parent
+    //
+    @include mq($until: tablet) {
+      width: 100%;
+    }
+  }
+}
+
+.figure__caption {
+  padding: ($spacer / 2) $spacer;
+}

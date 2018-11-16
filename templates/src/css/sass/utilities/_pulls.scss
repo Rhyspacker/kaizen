@@ -1,0 +1,24 @@
+// ==============================
+// Pulls
+// ========================================
+
+.pull--left { @include pull-left(); }
+.pull--left-mobile { @include mq($from: mobile) { @include pull-left(); } }
+.pull--left-mobilelandscape { @include mq($from: mobileLandscape) { @include pull-left(); } }
+.pull--left-tablet { @include mq($from: tablet) { @include pull-left(); } }
+.pull--left-desktop { @include mq($from: desktop) { @include pull-left(); } }
+.pull--left-wide { @include mq($from: wide) { @include pull-left(); } }
+
+.pull--right { @include pull-right(); }
+.pull--right-mobile { @include mq($from: mobile) { @include pull-right(); } }
+.pull--right-mobilelandscape { @include mq($from: mobileLandscape) { @include pull-right(); } }
+.pull--right-tablet { @include mq($from: tablet) { @include pull-right(); } }
+.pull--right-desktop { @include mq($from: desktop) { @include pull-right(); } }
+.pull--right-wide { @include mq($from: wide) { @include pull-right(); } }
+
+.pull--none { @include mq($from: mobile) { @include pull-none(); } }
+.pull--none-mobile { @include mq($from: mobile) { @include pull-none(); } }
+.pull--none-mobilelandscape { @include mq($from: mobileLandscape) { @include pull-none(); } }
+.pull--none-tablet { @include mq($from: tablet) { @include pull-none(); } }
+.pull--none-desktop { @include mq($from: desktop) { @include pull-none(); } }
+.pull--none-wide { @include mq($from: wide) { @include pull-none(); } }

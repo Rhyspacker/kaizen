@@ -1,0 +1,118 @@
+---
+title: "Figure - Styleguide"
+#body_classes:
+layout: styleguide
+---
+
+<div class="container">
+
+  <ol class="styleguide-breadcrumb">
+    <li class="styleguide-breadcrumb__item"><a href="index.html">Styleguide</a></li>
+    <li class="styleguide-breadcrumb__item active">Figure</li>
+  </ol>
+
+  <h1>Figure</h1>
+  <p><code>.figure</code> contains images and can optionally contain a caption.</p>
+
+  <h3>Basic figure</h3>
+  <p><code>.figure</code></p>
+  <div class="styleguide-example">
+    <div class="figure">
+      <div class="figure__media">
+        <div class="aspect--3-2 aspect-700--3-1">
+          <picture class="figure__media__img">
+            <source srcset="data:image/svg+xml;charset=utf-8,<svg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'1500'%20height%3D'500'><rect%20width%3D'100%25'%20height%3D'100%25'%20fill%3D'lightgrey'%2F><%2Fsvg>" media="(min-width:{{ project.image_breakpoint }})">
+            <img alt="" src="data:image/svg+xml;charset=utf-8,<svg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'660'%20height%3D'440'><rect%20width%3D'100%25'%20height%3D'100%25'%20fill%3D'lightgrey'%2F><%2Fsvg>">
+          </picture>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="styleguide-example-code">
+<pre><code>&#x3C;div class=&#x22;figure&#x22;&#x3E;
+  &#x3C;div class=&#x22;figure__media&#x22;&#x3E;
+    &#x3C;div class=&#x22;aspect--3-2 aspect-700--3-1&#x22;&#x3E;
+      &#x3C;picture class=&#x22;figure__media__img&#x22;&#x3E;
+        &#x3C;source srcset=&#x22;...&#x22; media=&#x22;(min-width:{{ project.image_breakpoint }})&#x22; &#x3E;
+        &#x3C;img alt=&#x22;...&#x22; src=&#x22;...&#x22; &#x3E;
+      &#x3C;/picture&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+  </div>
+
+  <h3>Figure with caption</h3>
+  <p><code>.figure</code> with optional additional markup <code>.figure__caption</code></p>
+
+  <div class="styleguide-example">
+    <div class="figure">
+      <div class="figure__media">
+        <div class="aspect--3-2 aspect-700--3-1">
+          <picture class="figure__media__img">
+            <source srcset="data:image/svg+xml;charset=utf-8,<svg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'1500'%20height%3D'500'><rect%20width%3D'100%25'%20height%3D'100%25'%20fill%3D'lightgrey'%2F><%2Fsvg>" media="(min-width:{{ project.image_breakpoint }})">
+            <img alt="" src="data:image/svg+xml;charset=utf-8,<svg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'660'%20height%3D'440'><rect%20width%3D'100%25'%20height%3D'100%25'%20fill%3D'lightgrey'%2F><%2Fsvg>">
+          </picture>
+        </div>
+      </div>
+      <div class="figure__caption">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum perferendis quae, beatae repellendus error!
+      </div>
+    </div>
+  </div>
+
+  <div class="styleguide-example-code">
+<pre><code>&#x3C;div class=&#x22;figure&#x22;&#x3E;
+  &#x3C;div class=&#x22;figure__media&#x22;&#x3E;
+    &#x3C;div class=&#x22;aspect--3-2 aspect-700--3-1&#x22;&#x3E;
+      &#x3C;picture class=&#x22;figure__media__img&#x22;&#x3E;
+        &#x3C;source srcset=&#x22;...&#x22; media=&#x22;(min-width:{{ project.image_breakpoint }})&#x22; &#x3E;
+        &#x3C;img alt=&#x22;...&#x22; src=&#x22;...&#x22; &#x3E;
+      &#x3C;/picture&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;figure__caption&#x22;&#x3E;
+    ...
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+  </div>
+
+  <h3>Figure with caption and link around image</h3>
+
+  <div class="styleguide-example">
+    <div class="figure">
+      <div class="figure__media">
+        <a href="#">
+          <div class="aspect--3-2 aspect-700--3-1">
+            <picture class="figure__media__img">
+              <source srcset="data:image/svg+xml;charset=utf-8,<svg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'1500'%20height%3D'500'><rect%20width%3D'100%25'%20height%3D'100%25'%20fill%3D'lightgrey'%2F><%2Fsvg>" media="(min-width:{{ project.image_breakpoint }})">
+              <img alt="" src="data:image/svg+xml;charset=utf-8,<svg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'660'%20height%3D'440'><rect%20width%3D'100%25'%20height%3D'100%25'%20fill%3D'lightgrey'%2F><%2Fsvg>">
+            </picture>
+          </div>
+        </a>
+      </div>
+      <div class="figure__caption">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum perferendis quae, beatae repellendus error!
+      </div>
+    </div>
+  </div>
+
+  <div class="styleguide-example-code">
+<pre><code>&#x3C;div class=&#x22;figure&#x22;&#x3E;
+  &#x3C;div class=&#x22;figure__media&#x22;&#x3E;
+    &#x3C;a href=&#x22;#&#x22;&#x3E;
+      &#x3C;div class=&#x22;aspect--3-2 aspect-700--3-1&#x22;&#x3E;
+        &#x3C;picture class=&#x22;figure__media__img&#x22;&#x3E;
+          &#x3C;source srcset=&#x22;...&#x22; media=&#x22;(min-width:{{ project.image_breakpoint }})&#x22; &#x3E;
+          &#x3C;img alt=&#x22;...&#x22; src=&#x22;...&#x22; &#x3E;
+        &#x3C;/picture&#x3E;
+      &#x3C;/div&#x3E;
+    &#x3C;/a&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;figure__caption&#x22;&#x3E;
+    ...
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+  </div>
+
+</div>

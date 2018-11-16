@@ -1,0 +1,119 @@
+// ==============================
+// Visibility
+// ========================================
+
+.sr-only {
+  @include sr-only();
+}
+
+.sr-only-focusable {
+  @include sr-only-focusable();
+}
+
+.invisible {
+  visibility: hidden !important;
+}
+
+// ==============================
+// hidden
+// ========================================
+
+.hidden {
+  display: none !important;
+}
+
+// ==============================
+// hidden print
+// ========================================
+
+.hidden-pr {
+  @include mq($media-type: print) {
+    display: none;
+    height: 0px;
+    overflow: hidden;
+  }
+}
+
+// ==============================
+// responsive visibility
+// ========================================
+
+.mobile-only {
+  @include mq($from: tablet) {
+    display: none !important;
+  }
+}
+.tablet-only {
+  @include mq($until: tablet) {
+    display: none !important;
+  }
+
+  @include mq($from: desktop) {
+    display: none !important;
+  }
+}
+.desktop-only {
+  @include mq($until: desktop) {
+    display: none !important;
+  }
+}
+.hidden-mobile-up {
+  @include mq($from: mobile) {
+    display: none !important;
+  }
+}
+.hidden-mobilelandscape-up {
+  @include mq($from: mobileLandscape) {
+    display: none !important;
+  }
+}
+.hidden-tablet-up {
+  @include mq($from: tablet) {
+    display: none !important;
+  }
+}
+.hidden-tabletlandscape-up {
+  @include mq($from: tabletLandscape) {
+    display: none !important;
+  }
+}
+.hidden-desktop-up {
+  @include mq($from: desktop) {
+    display: none !important;
+  }
+}
+.hidden-wide-up {
+  @include mq($from: wide) {
+    display: none !important;
+  }
+}
+.hidden-mobile-down {
+  @include mq($until: tablet) {
+    display: none !important;
+  }
+}
+.hidden-mobilelandscape-down {
+  @include mq($until: mobileLandscape) {
+    display: none !important;
+  }
+}
+.hidden-tablet-down {
+  @include mq($until: tablet) {
+    display: none !important;
+  }
+}
+.hidden-tabletlandscape-down {
+  @include mq($until: tabletLandscape) {
+    display: none !important;
+  }
+}
+.hidden-desktop-down {
+  @include mq($until: desktop) {
+    display: none !important;
+  }
+}
+.hidden-wide-down {
+  @include mq($until: wide) {
+    display: none !important;
+  }
+}

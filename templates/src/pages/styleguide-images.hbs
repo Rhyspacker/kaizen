@@ -1,0 +1,50 @@
+---
+title: "Images - Styleguide"
+#body_classes:
+layout: styleguide
+---
+
+<div class="container">
+
+  <ol class="styleguide-breadcrumb">
+    <li class="styleguide-breadcrumb__item"><a href="index.html">Styleguide</a></li>
+    <li class="styleguide-breadcrumb__item active">Images</li>
+  </ol>
+
+  <h1>Images</h1>
+  <p><code>.aspect--ratio</code> is used to maintain a ratio before image is loaded. Supported ratios are: aspect--1-1, aspect--3-1, aspect--3-2 and aspect--2-1. Always use in a seperate wrapping div.</p>
+
+  <div class="styleguide-example styleguide-example--images">
+
+    <div class="aspect--3-2">
+      <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=1500%C3%971000&w=1500&h=1000" />
+    </div>
+
+  </div>
+
+  <div class="styleguide-example-code">
+    <code><pre>&lt;div class=&quot;aspect--1-1&quot;&gt;<br/>   &lt;img src=&quot;...&quot; /&gt;<br/>&lt;/div&gt;</pre></code>
+    <code><pre>&lt;div class=&quot;aspect--2-1&quot;&gt;<br/>   &lt;img src=&quot;...&quot; /&gt;<br/>&lt;/div&gt;</pre></code>
+    <code><pre>&lt;div class=&quot;aspect--3-1&quot;&gt;<br/>   &lt;img src=&quot;...&quot; /&gt;<br/>&lt;/div&gt;</pre></code>
+    <code><pre>&lt;div class=&quot;aspect--3-2&quot;&gt;<br/>   &lt;img src=&quot;...&quot; /&gt;<br/>&lt;/div&gt;</pre></code>
+  </div>
+
+  <h3>Responsive aspect</h3>
+  <p>Sometimes a ratio is 3-2 and changes to 3-1 (wide) when the screensize is bigger than 700px. To do this you can use an additional modifier.</p>
+
+  <div class="styleguide-example styleguide-example--images">
+
+    <div class="aspect--3-2 aspect-700--3-1">
+      <picture>
+        <source srcset="https://placeholdit.imgix.net/~text?txtsize=33&txt=1500%C3%97500&w=1500&h=500" media="(min-width:{{ project.image_breakpoint }})">
+        <img alt="" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=660%C3%97440&w=660&h=440">
+      </picture>
+    </div>
+
+  </div>
+  
+  <div class="styleguide-example-code">
+    <code><pre>&lt;div class=&quot;aspect--3-2 aspect-700--3-1&quot;&gt;<br/>   &lt;picture&gt;<br/>      &lt;source srcset=&quot;...&quot; media=&quot;(min-width:{{ project.image_breakpoint }})&quot;&gt;<br/>      &lt;img alt=&quot;&quot; src=&quot;...&quot;&gt;<br/>   &lt;/picture&gt;<br/>&lt;/div&gt;</pre></code>
+  </div>
+
+</div>

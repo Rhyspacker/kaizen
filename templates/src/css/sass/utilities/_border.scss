@@ -1,0 +1,28 @@
+// ==============================
+// borders
+// utility classes for quickly applying borders
+// ========================================
+
+// ==============================
+// bottom
+// ========================================
+
+.b-b-0 {
+  border-bottom: 0;
+}
+
+.b-b-1 {
+  border-bottom: 1px solid $border-color;
+}
+
+// ==============================
+// top
+// ========================================
+
+.b-t-0 {
+  border-top: 0;
+}
+
+.b-t-1 {
+  border-top: 1px solid $border-color;
+}
