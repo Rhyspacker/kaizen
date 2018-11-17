@@ -3,26 +3,24 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
-
     <meta name="HandheldFriendly" content="True">
     <title>{{{ title }}} | {{capitalize project.shortname }}</title>
-    <link rel="canonical" href="http://sorted.dev.anything.agency/{{#if meta_url}}{{meta_url}}.html{{/if}}">
-    <meta name="description" content="Description goes here" />
+    <link rel="canonical" href="http://example.com/{{#if meta_url}}{{meta_url}}.html{{/if}}">
+    <meta name="description" content="{{{ description }}}" />
     <meta name="name" content="{{{ title }}}"/>
-  <!--   <meta property="fb:pages" content="TODO"/>
-    <meta property="fb:app_id" content="TODO"/> -->
-    <meta property="og:site_name" content="Sorted" />
-    <meta property="og:url" content="http://sorted.dev.anything.agency/{{#if meta_url}}{{meta_url}}.html{{/if}}" />
-    <meta property="og:title" content="Title goes here" />
-    <meta property="og:description" content="Description goes here" />
-    <meta property="og:image" content="http://sorted.dev.anything.agency/img/content/share-default.jpg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Kaizen" />
+    <meta property="og:url" content="http://example.com/{{#if meta_url}}{{meta_url}}.html{{/if}}" />
+    <meta property="og:title" content="{{{ title }}}" />
+    <meta property="og:description" content="{{{ description }}}" />
+    <meta property="og:image" content="http://example.com/img/content/share-default.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@" />
-    <meta name="twitter:title" content="Title goes here" />
-    <meta name="twitter:description" content="Description goes here" />
-    <meta name="twitter:image" content="http://sorted.dev.anything.agency/img/content/share-default.jpg" />
+    <meta name="twitter:title" content="{{{ title }}}" />
+    <meta name="twitter:description" content="{{{ description }}}" />
+    <meta name="twitter:image" content="http://example.com/img/content/share-default.jpg" />
     <link rel="apple-touch-icon" sizes="180x180" href="/img/icons/apple-touch-icon.png">
     <link rel="icon" type="image/png" href="/img/icons/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="/img/icons/favicon-16x16.png" sizes="16x16">
