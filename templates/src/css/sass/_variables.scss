@@ -8,6 +8,8 @@
 // Colors
 // Options
 // Spacing
+// Section
+// Z index
 // Borders
 // Links
 // Grid breakpoints
@@ -78,6 +80,18 @@ $spacer-x: $spacer;
 $spacer-y: $spacer;
 
 // ====================
+// Section
+// ========================================
+
+$section-spacer-y: 20px;
+
+// ====================
+// Z index
+// ========================================
+
+$zindex-header: 90000;
+
+// ====================
 // Borders
 // ========================================
 
@@ -115,13 +129,13 @@ $mq-breakpoints: (
 // Grid: Containers and Gutters
 // ========================================
 
-$gutter-width: 20px;
+$gutter-width: 30px;
 
 // Max widths for .container _layout.scss
 //
 $container-max-widths: (
   tablet:  768px,
-  desktop: 992px,
+  desktop: 1024px,
   wide:    1280px
 );
 
