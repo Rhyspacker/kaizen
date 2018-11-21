@@ -40,7 +40,7 @@ $color-grey-dark: #494b52;
 
 // Theme colors
 //
-$color-a-primary: #4cd147;
+$color-a-primary: #ffb600;
 $color-b-primary: #29fa7a;
 $color-c-primary: #befc33;
 $color-d-primary: #fc1561;
@@ -90,6 +90,8 @@ $section-spacer-y: 20px;
 // ========================================
 
 $zindex-header: 90000;
+$zindex-header-logo: 91000;
+$zindex-header-trigger: 91000;
 
 // ====================
 // Borders
@@ -99,20 +101,10 @@ $border-width: 1px;
 $border-color: $color-grey;
 
 // ====================
-// Links
-// ========================================
-
-$link-color: $body-color;
-$link-decoration: underline;
-$link-hover-color: darken($link-color, 15%);
-$link-hover-decoration: none;
-$link-hover-transition-time: 0.15s;
-
-// ====================
 // Breakpoints
 // ========================================
 
-$page-max-width: 1920px;
+$page-max-width: 1440px;
 
 $image-breakpoint: 700px;
 
@@ -222,9 +214,9 @@ $display3-line-height: 1;
 
 // Lead
 //
-$lead-font-size: 18px;
+$lead-font-size: 24px;
 $lead-font-weight: 500;
-$lead-line-height: 30px;
+$lead-line-height: 32px;
 
 // Muted
 //
@@ -278,7 +270,7 @@ $btn-font-family: $font-family-base;
 $btn-font-size: 16px;
 $btn-font-weight: bold;
 $btn-line-height: 40px;
-$btn-padding-x: 20px;
+$btn-padding-x: 0px;
 $btn-padding-y: 0px;
 $btn-block-spacing-y: 8px;
 $input-btn-border-width: $border-width;
@@ -289,8 +281,19 @@ $btn-sm-border-radius: 0px;
 $btn-sm-font-size: 14px;
 $btn-sm-font-weight: 400;
 $btn-sm-line-height: 28px;
-$btn-sm-padding-x: 14px;
+$btn-sm-padding-x: 0px;
 $btn-sm-padding-y: 0px;
+
+
+// ====================
+// Links
+// ========================================
+
+$link-color: $body-color;
+$link-decoration: underline;
+$link-hover-color: $color-grey;
+$link-hover-decoration: none;
+$link-hover-transition-time: 0.15s;
 
 // ====================
 // Forms

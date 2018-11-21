@@ -27,6 +27,7 @@ app.globals = {
     active: "is--active",
     expanded: "is--expanded",
     noScroll: "no--scroll",
+    hasScrolled: "has--scrolled",
     hasMenu: "has--menu"
   },
 
@@ -45,6 +46,15 @@ app.globals = {
     desktop: 1025,
     wide: 1440,
     superWide: 1920
+  },
+
+  noScroll: function(value) {
+    if (value == true) {
+      app.globals.body.classList.add(app.globals.states.noScroll);
+    }
+    if (value == false) {
+      app.globals.body.classList.remove(app.globals.states.noScroll);
+    }
   }
 };
 
