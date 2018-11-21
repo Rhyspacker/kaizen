@@ -3,6 +3,7 @@
 // ========================================
 
 .btn {
+  position: relative;
   border: $input-btn-border-width solid transparent;
   cursor: pointer;
   display: inline-block;
@@ -13,7 +14,10 @@
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
-  text-transform: uppercase;
+  &:not(.btn--navlink) {
+    overflow-x: hidden;
+  }
+  transition: color 0.3s;
 
   @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
 
@@ -40,87 +44,56 @@
     opacity: .3;
     cursor: disabled;
   }
-}
 
-// ====================
-// button colors
-// ========================================
-
-// Light
-.btn--light {
-  @include button-variant($color-grey-dark, $color-white, $color-white);
-}
-
-// Dark
-.btn--dark {
-  @include button-variant($color-white, $color-grey-dark, $color-grey-dark);
-}
-
-// Theme colors
-.btn--a {
-  @include button-variant($color-white, $color-a-primary, $color-a-primary);
-}
-.btn--b {
-  @include button-variant($color-white, $color-b-primary, $color-b-primary);
-}
-.btn--c {
-  @include button-variant($color-white, $color-c-primary, $color-c-primary);
-}
-.btn--d {
-  @include button-variant($color-white, $color-d-primary, $color-d-primary);
-}
-.btn--e {
-  @include button-variant($color-white, $color-e-primary, $color-e-primary);
-}
-.btn--f {
-  @include button-variant($color-white, $color-f-primary, $color-f-primary);
-}
-
-// ====================
-// button link
-//
-// Make a button look and behave like a link
-// ========================================
-
-.btn--link {
-  color: $link-color;
-  font-weight: normal;
-  text-transform: none;
-  text-decoration: $link-decoration;
-
-  &,
-  &:active {
-    background-color: transparent;
+  &.btn--navlink {
+    @include mq($until: desktop) {
+      font-size: 8vh;
+    }
   }
-  &,
-  &:focus,
-  &:active {
-    border-color: transparent;
-  }
-  @include hover {
-    border-color: transparent;
-  }
-  @include hover-focus {
-    background-color: transparent;
-    color: $link-hover-color;
-    text-decoration: $link-hover-decoration;
+
+  &:not(.btn--navlink) {
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 4px;
+      width: 100%;
+      height: 4px;
+      z-index: -1;
+      background: $color-a-primary;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      left: -100%;
+      bottom: 4px;
+      width: 100%;
+      height: 4px;
+      z-index: 1;
+      background: $color-grey;
+    }
+    @include mq($from: desktop) {
+      &:hover {
+        &:before {
+          animation: btnLine 0.5s cubic-bezier(.71,.34,.62,.72);
+        }
+      }
+    }
   }
 }
 
-// ====================
-// block buttons
-// ========================================
-
-.btn--block {
-  display: block;
-  width: 100%;
+@keyframes btnLine {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 0%;
+  }
+  100% {
+    left: 100%;
+  }
 }
 
-// Vertically space out multiple block buttons
-//
-.btn--block + .btn--block {
-  margin-top: $btn-block-spacing-y;
-}
 
 // ====================
 // button sizes
