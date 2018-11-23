@@ -6,3 +6,4 @@
 //=include hero/hero.js
 //=include header/header.js
 //=include card/card.js
+//=include smooth-scroll/smooth-scroll.js

@@ -6,27 +6,31 @@ app.hero = {
 
   config: {
     component: '.hero',
+    heroScrollTrigger: '.hero__scroll'
   },
 
   init: function() {
     var self = this;
 
-    var components = document.querySelectorAll(self.config.component);
+    var hero = document.querySelector(self.config.component);
 
-    if (components.length) {
-
-      for (var i=0; i<components.length; i++) {
-        var component = components[i];
-
-        self.componentFunction(component);
-      }
-
+    if (hero !== null) {
+      self.handleScrollClick(hero);
     }
-
   },
 
-  componentFunction: function(component) {
+  handleScrollClick: function(hero) {
     var self = this;
+
+    var heroScrollTrigger = hero.querySelector(self.config.heroScrollTrigger);
+    var header = document.querySelector(".header");
+
+    var scroll = new SmoothScroll();
+
+
+    heroScrollTrigger.addEventListener("click", function() {
+      scroll.animateScroll(header);
+    })
   },
 
 };

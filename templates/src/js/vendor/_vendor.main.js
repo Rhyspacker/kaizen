@@ -12,3 +12,6 @@
 
 // svgxuse 1.2.3 - https://github.com/Keyamoon/svgxuse
 //= include svgxuse/1.2.3/svgxuse.min.js
+
+// Smooth Scroll - https://github.com/cferdinandi/smooth-scroll
+//= include smooth-scroll/smooth-scroll.js

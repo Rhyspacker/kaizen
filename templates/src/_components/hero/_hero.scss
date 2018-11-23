@@ -42,5 +42,42 @@
 // ========================================
 
 .hero__scroll {
+  @include button-unstyled;
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: heroScroll 1.2s infinite ease-in;
 
+  .icon--down-arrow {
+    transition: fill 0.3s;
+    fill: $color-white;
+  }
+
+  @include mq($from: desktop) {
+    bottom: 50px;
+    &:hover {
+      .icon--down-arrow {
+        fill: $color-grey;
+      }
+    }
+  }
+}
+
+@keyframes heroScroll {
+  0% {
+    bottom: 25px;
+  }
+  25% {
+    bottom: 10px;
+  }
+  50% {
+    bottom: 25px;
+  }
+  75% {
+    bottom: 40px;
+  }
+  100% {
+    bottom: 25px;
+  }
 }
