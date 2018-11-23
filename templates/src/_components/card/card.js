@@ -25,7 +25,7 @@ app.card = {
   handleCardClicks: function(card) {
     var self = this;
     var cardLink = card.querySelector(self.config.cardLink);
-    console.log(cardLink);
+
     card.addEventListener("click", function() {
       cardLink.click();
     })
