@@ -8,6 +8,19 @@
   margin-left: ($gutter-width / -4);
   margin-right: ($gutter-width / -4);
 
+  padding-bottom: ($section-spacer-y);
+  padding-top: ($section-spacer-y);
+
+  @include mq($from: tablet) {
+    padding-bottom: ($section-spacer-y * 2);
+    padding-top: ($section-spacer-y * 2);
+  }
+
+  @include mq($from: desktop) {
+    padding-bottom: ($section-spacer-y * 3);
+    padding-top: ($section-spacer-y * 3);
+  }
+
   &__item {
     @include mq ($until: tablet) {
       min-width: 300px;
