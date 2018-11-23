@@ -22,7 +22,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    box-shadow: 0px 10px 49px -20px rgba(0,0,0,0.25);
+    //box-shadow: 0px 10px 49px -20px rgba(0,0,0,0.25);
     z-index: $zindex-header;
   }
 }
@@ -53,7 +53,7 @@
 
   .is--active & {
     position: fixed;
-    top: 10px;
+    top: 11px;
     left: 20px;
   }
 }
@@ -99,8 +99,28 @@
     transform: translate(-50%, -50%);
     padding: 0;
     text-align: center;
+
     li {
+      position: relative;
+      transform: translateY(-10px);
+      opacity: 0;
       font-size: 10vh;
+      
+      .is--active & {
+        transition: transform 1s, opacity 0.5s;
+        transform: translateY(0);
+        opacity: 1;
+
+        &:nth-of-type(1) {
+          transition-delay: 0.15s;
+        }
+        &:nth-of-type(2) {
+          transition-delay: 0.3s;
+        }
+        &:nth-of-type(3) {
+          transition-delay: 0.45s;
+        }
+      }
     }
   }
 
@@ -132,7 +152,8 @@
   &-icon {
     display: block;
     transform: scale(1);
-    transition: transform 0.3s;
+    opacity: 1;
+    transition: transform 0.3s, opacity 0.4s;
 
     span {
       display: block;
@@ -146,13 +167,15 @@
 
     .is--active & {
       transform: scale(0);
+      opacity: 0;
     }
   }
 
   &-icon-close {
     display: block;
     transform: scale(0);
-    transition: transform 0.3s;
+    opacity: 0;
+    transition: transform 0.3s, opacity 0.4s;
 
     span {
       display: block;
@@ -172,6 +195,7 @@
 
     .is--active & {
       transform: scale(1);
+      opacity: 1;
     }
   }
 
