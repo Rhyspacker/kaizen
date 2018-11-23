@@ -138,10 +138,10 @@ $container-max-widths: (
 
 // Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif: "Helvetica Neue", Arial, sans-serif !default;
-$font-family-serif: Georgia, "Times New Roman", Times, serif;
+$font-family-secondary: 'Open Sans', sans-serif !default;
+$font-family-primary: 'Muli', sans-serif;
 $font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-$font-family-base: $font-family-sans-serif;
+$font-family-base: $font-family-secondary;
 
 $font-size-base: 1rem;
 $font-size-html: 18px;
@@ -183,7 +183,7 @@ $font-size-h6-tablet: 18px;
 $font-size-h6-desktop: 24px;
 
 $headings-margin-bottom: ($spacer / 2);
-$headings-font-family: $font-family-base;
+$headings-font-family: $font-family-primary;
 $headings-font-weight: bold;
 $headings-line-height: 1.1;
 $headings-color: inherit;
@@ -195,7 +195,7 @@ $display1-font-size: 30px;
 $display1-font-size-tablet: 50px;
 $display1-font-size-desktop: 64px;
 $display1-font-weight: bold;
-$display1-line-height: 1;
+$display1-line-height: 1.25;
 
 $display2-font-family: $font-family-base;
 $display2-font-size: 16px;
@@ -236,10 +236,6 @@ $blockquote-border-width: .25rem !default;
 //
 $dt-font-weight: bold;
 $list-inline-padding: 5px;
-
-// ====================
-// Z-index master list
-// ========================================
 
 // ====================
 // Components
