@@ -43,6 +43,8 @@
 .text--right-desktop-up { @include mq($from: desktop) { text-align: right !important; } }
 .text--right-wide-up { @include mq($from: wide) { text-align: right !important; } }
 
+.text--center-tablet-down { @include mq($until: tablet) { text-align: center !important; } }
+
 // ====================
 // transformation
 // ========================================
@@ -54,4 +56,12 @@
   &::first-letter {
     text-transform: capitalize !important;
   }
+}
+
+// ====================
+// line-height crop
+// ========================================
+
+.text-lh-1-25 {
+  @include lhCrop(1.25); //line-height: 1.25
 }
