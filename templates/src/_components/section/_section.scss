@@ -23,7 +23,7 @@
 // ========================================
 
 .section__header {
-  padding-bottom: ($section-spacer-y * 3);
+  padding-bottom: ($section-spacer-y * 1);
 
   @include mq($from: tablet) {
     position: relative;
