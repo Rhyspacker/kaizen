@@ -14,10 +14,21 @@
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
+  transition: color 0.3s;
+
   &:not(.btn--navlink) {
     overflow-x: hidden;
   }
-  transition: color 0.3s;
+
+  &.btn--light {
+    color: $color-white;
+    &:hover {
+      color: $color-a-primary;
+    }
+    &:before {
+      background: darken($color-a-primary, 10%) !important;
+    }
+  }
 
   @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
 

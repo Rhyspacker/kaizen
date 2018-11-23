@@ -1,0 +1,88 @@
+// ==============================
+// Card
+// ========================================
+
+.card {
+  position: relative;
+  color: $color-white;
+  background-size: 110% auto;
+  background-position: center;
+  cursor: pointer;
+
+  &:not(:last-child) {
+    margin-bottom: $spacer-y;
+  }
+
+  &__inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 300px;
+    padding: ($spacer-y * 4) $spacer-y;
+
+    @include mq($from: desktop) {
+      padding: ($spacer-y * 4) $spacer-y*2;
+      min-height: 400px;
+    }
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: $color-black;
+    opacity: 0.5;
+    z-index: $zindex-card-tint;
+    transition: opacity 0.3s;
+  }
+
+  @include mq($from: desktop) {
+    &:hover {
+      .card__media img {
+        width: 120%;
+        height: 120%;
+      }
+      &:after {
+        opacity: 0.6;
+      }
+    }
+  }
+}
+
+// ==============================
+// Card media
+// ========================================
+
+.card__media {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: $zindex-card-media;
+  overflow: hidden;
+
+  img {
+    width: 110%;
+    height: 110%;
+    @include center-absolute;
+    transition: width 0.65s, height 0.65s;
+  }
+}
+
+// ==============================
+// Card title
+// ========================================
+
+.card__title {
+  max-width: 600px;
+  margin-bottom: $spacer-y;
+  z-index: $zindex-card-content;
+}
+
+// ==============================
+// Card link
+// ========================================
+
+.card__link {
+  z-index: $zindex-card-content;
+}

@@ -36,6 +36,7 @@ $color-white: #fff;
 // Grays
 //
 $color-grey: #949494;
+$color-grey-light: #ededed;
 $color-grey-dark: #494b52;
 
 // Theme colors
@@ -92,6 +93,11 @@ $section-spacer-y: 20px;
 $zindex-header: 90000;
 $zindex-header-logo: 91000;
 $zindex-header-trigger: 91000;
+
+$zindex-card-media: 80000;
+$zindex-card-tint: 81000;
+$zindex-card-content: 82000;
+
 
 // ====================
 // Borders
