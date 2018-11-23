@@ -23,7 +23,7 @@
 
   &__item {
     @include mq ($until: tablet) {
-      min-width: 300px;
+      min-width: 140px;
       margin-bottom: ($gutter-width / 2);
     }
     flex: 1 1 auto;
