@@ -110,7 +110,7 @@ $border-color: $color-grey;
 // Breakpoints
 // ========================================
 
-$page-max-width: 1440px;
+$page-max-width: 1280px;
 
 $image-breakpoint: 700px;
 
@@ -220,7 +220,8 @@ $display3-line-height: 1;
 
 // Lead
 //
-$lead-font-size: 24px;
+$lead-font-size: 20px;
+$lead-font-size-tablet: 24px;
 $lead-font-weight: 500;
 $lead-line-height: 32px;
 
