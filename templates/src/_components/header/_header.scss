@@ -53,13 +53,13 @@
   z-index: $zindex-header-logo;
   flex: 0 1 40px;
   width: 40px;
-  img {
+  svg {
     max-width: 100%;
   }
 
   .is--active & {
     position: fixed;
-    top: 11px;
+    top: 5px;
     left: 20px;
   }
 }

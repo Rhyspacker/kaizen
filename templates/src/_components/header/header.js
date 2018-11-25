@@ -29,7 +29,7 @@ app.header = {
     window.addEventListener("scroll", function() {
       var scrollIndicatorPos = header.getBoundingClientRect().top;
 
-      if (scrollIndicatorPos <= 0) {
+      if (scrollIndicatorPos < 0) {
         header.classList.add(app.globals.states.hasScrolled);
       }
       else {
