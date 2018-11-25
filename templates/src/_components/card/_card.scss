@@ -21,6 +21,7 @@
     align-items: flex-start;
     min-height: 300px;
     padding: ($spacer-y * 4) $spacer-y;
+    overflow: hidden;
 
     @include mq($from: desktop) {
       padding: ($spacer-y * 4) $spacer-y*2;
@@ -40,9 +41,8 @@
 
   @include mq($from: desktop) {
     &:hover {
-      .card__media img {
-        width: 120%;
-        height: 120%;
+      .card__media {
+        transform: scale(1.1);
       }
       &:after {
         opacity: 0.6;
@@ -59,14 +59,9 @@
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
   z-index: $zindex-card-media;
-  overflow: hidden;
-
-  img {
-    width: 110%;
-    height: 110%;
-    @include center-absolute;
-    transition: width 0.65s, height 0.65s;
-  }
+  background-size: cover;
+  transition: transform 0.65s;
+  transform: scale(1);
 }
 
 // ==============================
