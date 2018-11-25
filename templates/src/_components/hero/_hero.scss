@@ -31,9 +31,12 @@
 
 .hero__logo {
   @include center-absolute;
-  img {
+  .icon--logo {
     width: 250px;
-    height: 270px;
+    height: 250px;
+    path {
+      fill: $color-white;
+    }
   }
 }
 
