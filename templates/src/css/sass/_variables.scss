@@ -197,7 +197,7 @@ $font-size-h6-desktop: 24px;
 $headings-margin-bottom: ($spacer / 2);
 $headings-font-family: $font-family-primary;
 $headings-font-weight: bold;
-$headings-line-height: 1.1;
+$headings-line-height: 1.35;
 $headings-color: inherit;
 
 // Display sizing
@@ -292,6 +292,16 @@ $btn-sm-font-weight: 400;
 $btn-sm-line-height: 28px;
 $btn-sm-padding-x: 0px;
 $btn-sm-padding-y: 0px;
+
+// ====================
+// Icons
+// ========================================
+
+$icon-sm-dimensions: 40px;
+$icon-sm-dimensions-svg: 26px;
+
+$icon-lg-dimensions: 40px;
+$icon-lg-dimensions-svg: 28px;
 
 
 // ====================

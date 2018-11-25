@@ -1,0 +1,63 @@
+// ==============================
+// Social Icons
+// ========================================
+
+.socialicons {
+  display: inline-block;
+  font-size: 0;
+}
+
+.socialicon {
+  padding: 0 $spacer-x/4;
+  @include mq($from: desktop) {
+    padding: 0 $spacer-x/3;
+    &:not(:first-of-type) {
+      margin-left: -2px;
+    }
+  }
+
+  > a {
+    display: inline-block;
+    text-decoration: none;
+  }
+}
+
+.socialicon__icon {
+  color: inherit;
+  display: inline-block;
+  height: $icon-sm-dimensions;
+  line-height: 1;
+  position: relative;
+  text-align: center;
+  width: $icon-sm-dimensions;
+  transition: color $link-hover-transition-time;
+
+  @include mq($from: tablet) {
+    height: $icon-lg-dimensions;
+    width: $icon-lg-dimensions;
+  }
+
+  svg {
+    display: inline-block;
+    fill: inherit;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    transition: opacity 0.3s;
+    height: $icon-sm-dimensions-svg;
+    width: $icon-sm-dimensions-svg;
+
+    @include mq($from: tablet) {
+      height: $icon-lg-dimensions-svg;
+      width: $icon-lg-dimensions-svg;
+    }
+  }
+
+  &:hover {
+    svg {
+      opacity: 0.5;
+    }
+  }
+}

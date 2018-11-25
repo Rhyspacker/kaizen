@@ -1,0 +1,29 @@
+// ==============================
+// Page header
+// ========================================
+
+.page-header {
+  width: 100%;
+  padding: ($spacer-y*2) 0;
+
+  @include mq($from: tablet) {
+    padding: ($spacer-y*2) 0;
+  }
+  @include mq($from: desktop) {
+    padding: ($spacer-y*4) 0;
+  }
+
+
+  // First section after page heading - remove padding top
+  + .section {
+    padding-top: 0;
+  }
+}
+
+// ==============================
+// Page header element
+// ========================================
+
+.page-header__title {
+  text-align: center;
+}
