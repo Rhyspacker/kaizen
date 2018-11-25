@@ -1,0 +1,56 @@
+// ==============================
+// Work header
+// ========================================
+
+.work-header {
+  position: relative;
+  width: 100%;
+  padding: ($spacer-y*4) $spacer-x;
+
+  @include mq($from: tablet) {
+    padding: ($spacer-y*5) $spacer-x;
+  }
+  @include mq($from: desktop) {
+    padding: ($spacer-y*8) $spacer-x;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: $color-black;
+    opacity: 0.5;
+    z-index: $zindex-work-header-tint;
+    transition: opacity 0.3s;
+  }
+
+  + .section {
+    @include mq($until: tablet) {
+      padding-top: $spacer-y*2;
+    }
+  }
+}
+
+// ==============================
+// Work header title
+// ========================================
+
+.work-header__title {
+  position: relative;
+  max-width: 800px;
+  z-index: $zindex-work-header-content;
+  color: $color-white;
+}
+
+// ==============================
+// Work header media
+// ========================================
+
+.work-header__media {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: $zindex-work-header-media;
+  background-size: cover;
+  transition: transform 0.65s;
+  transform: scale(1);
+}

@@ -98,6 +98,9 @@ $zindex-card-media: 80000;
 $zindex-card-tint: 81000;
 $zindex-card-content: 82000;
 
+$zindex-work-header-media: 80000;
+$zindex-work-header-tint: 81000;
+$zindex-work-header-content: 82000;
 
 // ====================
 // Borders
@@ -142,7 +145,6 @@ $container-max-widths-header: (
   desktop: 1000px,
   wide:    1200px
 );
-
 
 // ====================
 // Typography

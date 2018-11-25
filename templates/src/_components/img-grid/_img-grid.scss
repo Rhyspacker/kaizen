@@ -37,3 +37,15 @@
     max-width: 100%;
   }
 }
+
+// ==============================
+// Image Grid modifiers
+// ========================================
+
+.img-grid--work {
+  .img-grid__item {
+    width: 50%;
+    max-width: 50%;
+    margin-bottom: ($gutter-width / 2);
+  }
+}
