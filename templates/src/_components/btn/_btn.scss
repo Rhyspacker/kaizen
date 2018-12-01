@@ -17,7 +17,7 @@
   transition: color 0.3s;
 
   &:not(.btn--navlink) {
-    overflow-x: hidden;
+    overflow: hidden;
   }
 
   &.btn--light {
@@ -67,7 +67,7 @@
       content: '';
       position: absolute;
       left: 0;
-      bottom: 6px;
+      bottom: 0px;
       width: 100%;
       height: 2px;
       z-index: -1;
@@ -77,7 +77,7 @@
       content: '';
       position: absolute;
       left: -100%;
-      bottom: 6px;
+      bottom: 0px;
       width: 100%;
       height: 2px;
       z-index: 1;
@@ -110,13 +110,19 @@
 // button sizes
 // ========================================
 
-// Small
+// Large button
 //
-.btn--sm {
-  // line-height: ensure proper height of button next to small input
-  @include button-size($btn-sm-padding-y, $btn-sm-padding-x, $btn-sm-font-size, $btn-sm-line-height, $btn-sm-border-radius);
+.btn--lg {
+  @include button-size($btn-lg-padding-y, $btn-lg-padding-x, $btn-lg-font-size, $btn-lg-line-height, $btn-lg-border-radius);
 
-  .btn__icon {
-    font-size: ($btn-sm-font-size - 1);
+  @include mq($from: tablet) {
+    font-size: $btn-lg-font-size-tablet;
+  }
+
+  &:after {
+    bottom: 0px !important;
+  }
+  &:before {
+    bottom: 0px !important;
   }
 }

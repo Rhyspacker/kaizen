@@ -280,20 +280,23 @@ $btn-border-radius: 0px;
 $btn-font-family: $font-family-base;
 $btn-font-size: 16px;
 $btn-font-weight: bold;
-$btn-line-height: 40px;
+$btn-line-height: 24px;
 $btn-padding-x: 0px;
 $btn-padding-y: 0px;
 $btn-block-spacing-y: 8px;
 $input-btn-border-width: $border-width;
 
-// Small button
+
+// Large button
 //
-$btn-sm-border-radius: 0px;
-$btn-sm-font-size: 14px;
-$btn-sm-font-weight: 400;
-$btn-sm-line-height: 28px;
-$btn-sm-padding-x: 0px;
-$btn-sm-padding-y: 0px;
+$btn-lg-border-radius: 0px;
+$btn-lg-font-size: 22px;
+$btn-lg-font-size-tablet: 28px;
+$btn-lg-font-weight: 400;
+$btn-lg-line-height: 40px;
+$btn-lg-padding-x: 0px;
+$btn-lg-padding-y: 0px;
+
 
 // ====================
 // Icons
