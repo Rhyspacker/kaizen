@@ -32,8 +32,13 @@
 .hero__logo {
   @include center-absolute;
   .icon--logo {
-    width: 250px;
-    height: 250px;
+    width: 150px;
+    height: 150px;
+
+    @include mq($from: tablet) {
+      width: 250px;
+      height: 250px;
+    }
     path {
       fill: $color-white;
     }
