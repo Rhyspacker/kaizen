@@ -4,6 +4,12 @@
 
 body {
   min-height: 100vh; // Fix for iOS WebKit bug #150715 https://bugs.webkit.org/show_bug.cgi?id=150715
+  transition: opacity 0.3s;
+  opacity: 0;
+
+  .js & {
+    opacity: 1;
+  }
 }
 
 .page {
