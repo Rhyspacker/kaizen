@@ -3,8 +3,18 @@
 // ========================================
 
 .hero {
+  position: relative;
   width: 100%;
   height: 100%;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    opacity: 0.5;
+    z-index: $zindex-hero-gradient;
+    background: linear-gradient(25deg, rgba(93,71,130,1) 0%,rgba(25,120,151,1) 95%);
+  }
 }
 
 // ==============================
@@ -15,6 +25,7 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
+
   video {
     height: 100%;
     width: 100%;
@@ -22,6 +33,14 @@
     z-index: -100;
     right: 0;
     bottom: 0;
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+
+  .has--loaded & {
+    video {
+      opacity: 1;
+    }
   }
 }
 
@@ -31,6 +50,12 @@
 
 .hero__logo {
   @include center-absolute;
+  z-index: $zindex-hero-content;
+
+  opacity: 0;
+  transition: opacity 1.5s;
+  transition-delay: 1s;
+
   .icon--logo {
     width: 150px;
     height: 150px;
@@ -39,9 +64,17 @@
       width: 250px;
       height: 250px;
     }
+    @media screen and (max-height: 400px) {
+      width: 100px;
+      height: 100px;
+    }
     path {
       fill: $color-white;
     }
+  }
+
+  .has--loaded & {
+    opacity: 1;
   }
 }
 
@@ -56,11 +89,10 @@
   left: 50%;
   transform: translateX(-50%);
   animation: heroScroll 1.2s infinite ease-in;
-
-  .icon--down-arrow {
-    transition: fill 0.3s;
-    fill: $color-white;
-  }
+  z-index: $zindex-hero-content;
+  opacity: 0;
+  transition: opacity 1.5s;
+  transition-delay: 2s;
 
   @include mq($from: desktop) {
     bottom: 50px;
@@ -69,6 +101,20 @@
         fill: $color-grey;
       }
     }
+  }
+
+  .icon--down-arrow {
+    transition: fill 0.3s;
+    fill: $color-white;
+
+    @media screen and (max-height: 400px) {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .has--loaded & {
+    opacity: 1;
   }
 }
 
