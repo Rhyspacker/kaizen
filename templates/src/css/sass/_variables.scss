@@ -41,8 +41,8 @@ $color-grey-dark: #494b52;
 
 // Theme colors
 //
-$color-a-primary: #ffb600;
-$color-b-primary: #29fa7a;
+$color-a-primary: #197897;
+$color-b-primary: #5D4782;
 $color-c-primary: #befc33;
 $color-d-primary: #fc1561;
 $color-e-primary: #8c60f4;
@@ -90,6 +90,9 @@ $section-spacer-y: 20px;
 // Z index
 // ========================================
 
+$zindex-hero-gradient: 81000;
+$zindex-hero-content: 82000;
+
 $zindex-header: 90000;
 $zindex-header-logo: 91000;
 $zindex-header-trigger: 91000;
@@ -135,6 +138,7 @@ $gutter-width: 30px;
 // Max widths for .container _layout.scss
 //
 $container-max-widths: (
+  mobileLandscape: 540px,
   tablet:  700px,
   desktop: 1000px,
   wide:    1200px
@@ -152,12 +156,12 @@ $container-max-widths-header: (
 
 // Font, line-height, and color for body text, headings, and more.
 
-$font-family-secondary: 'Open Sans', sans-serif !default;
-$font-family-primary: 'Muli', sans-serif;
+$font-family-primary: 'Noto Serif', sans-serif !default;
+$font-family-secondary: 'Work Sans', sans-serif;
 $font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-$font-family-base: $font-family-secondary;
+$font-family-base: $font-family-primary;
 
-$font-size-base: 1rem;
+$font-size-base: 1.15rem;
 $font-size-html: 18px;
 $font-size-html-desktop: 22px;
 
@@ -197,14 +201,14 @@ $font-size-h6-tablet: 18px;
 $font-size-h6-desktop: 24px;
 
 $headings-margin-bottom: ($spacer / 2);
-$headings-font-family: $font-family-primary;
+$headings-font-family: $font-family-secondary;
 $headings-font-weight: bold;
 $headings-line-height: 1.35;
 $headings-color: inherit;
 
 // Display sizing
 //
-$display1-font-family: $font-family-base;
+$display1-font-family: $font-family-secondary;
 $display1-font-size: 30px;
 $display1-font-size-tablet: 46px;
 $display1-font-size-desktop: 64px;
@@ -277,11 +281,11 @@ $table-border-color: $color-grey;
 // ========================================
 
 $btn-border-radius: 0px;
-$btn-font-family: $font-family-base;
+$btn-font-family: $font-family-secondary;
 $btn-font-size: 16px;
 $btn-font-weight: bold;
 $btn-line-height: 24px;
-$btn-padding-x: 0px;
+$btn-padding-x: 2px;
 $btn-padding-y: 0px;
 $btn-block-spacing-y: 8px;
 $input-btn-border-width: $border-width;
