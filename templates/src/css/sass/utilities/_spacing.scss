@@ -85,6 +85,8 @@
 .pt-3 { padding-top: ($spacer-y * 3) !important; }
 .pt-4 { padding-top: ($spacer-y * 4) !important; }
 
+.pt-0-tablet-down { @include mq($until: tablet) { padding-top: 0 !important; } }
+
 // ==============================
 // padding-left
 // ========================================
