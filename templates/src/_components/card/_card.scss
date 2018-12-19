@@ -39,12 +39,25 @@
     transition: opacity 0.3s;
   }
 
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    opacity: 0;
+    z-index: $zindex-hero-gradient;
+    background: linear-gradient(25deg, rgba(93,71,130,1) 0%,rgba(25,120,151,0.75) 95%);
+    transition: opacity 0.3s;
+  }
+
   @include mq($from: desktop) {
     &:hover {
       .card__media {
         transform: scale(1.1);
       }
       &:after {
+        opacity: 0.4;
+      }
+      &:before {
         opacity: 0.6;
       }
     }
