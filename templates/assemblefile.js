@@ -65,6 +65,15 @@ app.task('html', function() {
 	  handlebars: handlebars
 	});
 
+  handlebars.registerHelper({
+    and: function () {
+        return Array.prototype.slice.call(arguments).every(Boolean);
+    },
+    or: function () {
+        return Array.prototype.slice.call(arguments, 0, -1).some(Boolean);
+    }
+  });
+
 	app.partials(['src/_components/**/*.hbs']);
   app.layouts('src/_layouts/*.hbs');
   app.pages('src/pages/*.hbs');

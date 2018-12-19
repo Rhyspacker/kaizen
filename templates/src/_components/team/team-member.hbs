@@ -1,0 +1,19 @@
+<div class="team__member">
+  <div class="team__member__img">
+    <img src="img/content/team/{{team-member__img}}" alt="{{team-member__name}}" class="img-fluid">
+  </div>
+  <div class="team__member__content">
+    <h3 class="team__member__name">
+      {{team-member__name}}
+    </h3>
+    <p class="team__member__role">
+      {{team-member__role}}
+    </p>
+    {{#if (or team-member__linkedin team-member__twitter) }}
+    <p class="team__member__social">
+      {{#if team-member__linkedin}}<a href="{{team-member__linkedin}}" class="btn">LinkedIn</a>{{/if}}
+      {{#if team-member__twitter}}<a href="{{team-member__twitter}}" class="btn">Twitter</a>{{/if}}
+    </p>
+    {{/if}}
+  </div>
+</div>

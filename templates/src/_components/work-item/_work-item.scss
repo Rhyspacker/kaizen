@@ -43,6 +43,33 @@
 }
 
 // ==============================
+// Work header subtitle
+// ========================================
+
+.work-header__subtitle {
+  position: relative;
+  z-index: $zindex-work-header-content;
+  color: $color-white;
+  padding-bottom: $spacer-y/1.2;
+
+  a {
+    text-decoration: none;
+    color: $color-white;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 20px;
+    height: 2px;
+    background: $color-white;
+    transition: opacity 0.3s;
+  }
+}
+
+// ==============================
 // Work header media
 // ========================================
 
@@ -53,4 +80,14 @@
   background-size: cover;
   transition: transform 0.65s;
   transform: scale(1);
+}
+
+// ==============================
+// Work item block
+// ========================================
+
+.work-item__block {
+  @include mq($until: tablet) {
+    padding: 0 $spacer-x;
+  }
 }
