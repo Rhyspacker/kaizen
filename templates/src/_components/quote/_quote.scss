@@ -5,13 +5,14 @@
 .quote {
   margin: 0 auto;
   max-width: 400px;
-  padding: ($spacer-y*2) 0 0 0;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.6;
+  padding-bottom: $spacer-y*2;
 
   @include mq($from: desktop) {
-    padding: ($spacer-y*4) 0 0 0;
     max-width: 560px;
+    font-size: 20px;
+    padding-bottom: $spacer-y*4;
   }
 
   q {
@@ -30,18 +31,11 @@
       left: -26px;
       @include mq($from: tablet) {
         top: -22px;
-        left: -26px;
+        left: -30px;
       }
     }
     &:after {
-      position: relative;
-      bottom: -18px;
-      right: -10px;
-      line-height: 0;
-      @include mq($from: tablet) {
-        bottom: -22px;
-        right: -10px;
-      }
+      display: none;
     }
   }
 
@@ -50,5 +44,6 @@
     padding-top: $spacer-y;
     text-align: center;
     font-weight: bold;
+    font-family: $font-family-secondary;
   }
 }
