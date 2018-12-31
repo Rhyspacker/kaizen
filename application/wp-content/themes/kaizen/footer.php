@@ -9,24 +9,30 @@
 							<div class="col-md-3">
 								<h3 class="h4">We're on social</h3>
 								<div class="socialicons mb-1" style="margin-left: -10px;">
-									<span class="socialicon">
-										<a href="https://www.facebook.com/KaizenCreate/" target="_blank" rel="noopener">
-											<span class="socialicon__icon"><svg height="32" width="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"  height="26" width="26"><path d="M32 30a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2C0 .9.9 0 2 0h28a2 2 0 0 1 2 2v28z" fill="#3B5998"/><path d="M22 32V20h4l1-5h-5v-2c0-2 1-3 3-3h2V5h-4c-3.67 0-6 2.88-6 7v3h-4v5h4v12h5z" fill="#FFF"/></svg>
-								</span>
-										</a>
-									</span>
-									<span class="socialicon">
-										<a href="#" target="_blank" rel="noopener">
-											<span class="socialicon__icon"><svg viewBox="0 0 24 24" height="32" width="32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" ><path d="M17 22H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5z" fill="#FFF"/><radialGradient cx="2.46" cy="22.21" gradientUnits="userSpaceOnUse" id="a" r="26.82"><stop offset="0" stop-color="#ffd35a"/><stop offset=".25" stop-color="#f7964c"/><stop offset=".6" stop-color="#f05b70"/><stop offset=".72" stop-color="#bd6186"/><stop offset=".85" stop-color="#85659b"/><stop offset=".95" stop-color="#5c66a9"/><stop offset="1" stop-color="#4766b0"/></radialGradient><path d="M17.02 1H6.98A5.98 5.98 0 0 0 1 6.98v10.04C1 20.32 3.68 23 6.98 23h10.04c3.3 0 5.98-2.68 5.98-5.98V6.98C23 3.68 20.32 1 17.02 1zM21 17.02c0 2.2-1.78 3.98-3.98 3.98H6.98A3.98 3.98 0 0 1 3 17.02V6.98C3 4.78 4.78 3 6.98 3h10.04C19.22 3 21 4.78 21 6.98v10.04zM12 6a6 6 0 1 0 .01 12.01A6 6 0 0 0 12 6zm0 10a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6-11a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" fill="url(#a)"/><linearGradient gradientUnits="userSpaceOnUse" id="b" x1=".53" x2="23.47" y1="6.65" y2="17.35"><stop offset="0" stop-color="#fff" stop-opacity=".2"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient><path d="M17.02 1H6.98A5.98 5.98 0 0 0 1 6.98v10.04C1 20.32 3.68 23 6.98 23h10.04c3.3 0 5.98-2.68 5.98-5.98V6.98C23 3.68 20.32 1 17.02 1z" fill="url(#b)"/></svg>
-								</span>
-										</a>
-									</span>
-									<span class="socialicon">
-										<a href="#" target="_blank" rel="noopener">
-											<span class="socialicon__icon"><svg height="32" width="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" ><path clip-rule="evenodd" d="M31.86 7.2c.24-1.36.23-2.76-.6-3.81-1.15-1.48-3.6-1.54-5.29-1.28-1.37.22-6 2.3-7.58 7.26 2.8-.22 4.26.2 4 3.32-.12 1.3-.77 2.74-1.5 4.1-.83 1.59-2.4 4.7-4.46 2.45-1.86-2-1.72-5.86-2.15-8.43-.23-1.43-.48-3.23-.95-4.7-.4-1.28-1.31-2.82-2.44-3.15-1.2-.36-2.7.2-3.57.73C4.53 5.35 2.42 7.72 0 9.67v.18c.48.46.6 1.22 1.31 1.33 1.66.25 3.24-1.57 4.35.32.67 1.15.88 2.42 1.3 3.67.58 1.66 1.03 3.46 1.5 5.37.79 3.23 1.77 8.06 4.52 9.25 1.4.6 3.52-.2 4.58-.85 2.9-1.74 5.15-4.26 7.09-6.83 4.41-6.06 6.85-12.94 7.21-14.9z" fill="#00ADEF" fill-rule="evenodd"/></svg>
-								</span>
-										</a>
-									</span>
+									<?php if ( get_theme_mod("facebook_social") ) : ?>
+										<span class="socialicon">
+											<a href="<?php echo get_theme_mod("facebook_social") ?>" target="_blank" rel="noopener">
+												<span class="socialicon__icon"><svg height="32" width="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"  height="26" width="26"><path d="M32 30a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2C0 .9.9 0 2 0h28a2 2 0 0 1 2 2v28z" fill="#3B5998"/><path d="M22 32V20h4l1-5h-5v-2c0-2 1-3 3-3h2V5h-4c-3.67 0-6 2.88-6 7v3h-4v5h4v12h5z" fill="#FFF"/></svg>
+												</span>
+											</a>
+										</span>
+									<?php endif; ?>
+									<?php if ( get_theme_mod("instagram_social") ) : ?>
+										<span class="socialicon">
+											<a href="<?php echo get_theme_mod("instagram_social") ?>" target="_blank" rel="noopener">
+												<span class="socialicon__icon"><svg viewBox="0 0 24 24" height="32" width="32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" ><path d="M17 22H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5z" fill="#FFF"/><radialGradient cx="2.46" cy="22.21" gradientUnits="userSpaceOnUse" id="a" r="26.82"><stop offset="0" stop-color="#ffd35a"/><stop offset=".25" stop-color="#f7964c"/><stop offset=".6" stop-color="#f05b70"/><stop offset=".72" stop-color="#bd6186"/><stop offset=".85" stop-color="#85659b"/><stop offset=".95" stop-color="#5c66a9"/><stop offset="1" stop-color="#4766b0"/></radialGradient><path d="M17.02 1H6.98A5.98 5.98 0 0 0 1 6.98v10.04C1 20.32 3.68 23 6.98 23h10.04c3.3 0 5.98-2.68 5.98-5.98V6.98C23 3.68 20.32 1 17.02 1zM21 17.02c0 2.2-1.78 3.98-3.98 3.98H6.98A3.98 3.98 0 0 1 3 17.02V6.98C3 4.78 4.78 3 6.98 3h10.04C19.22 3 21 4.78 21 6.98v10.04zM12 6a6 6 0 1 0 .01 12.01A6 6 0 0 0 12 6zm0 10a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6-11a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" fill="url(#a)"/><linearGradient gradientUnits="userSpaceOnUse" id="b" x1=".53" x2="23.47" y1="6.65" y2="17.35"><stop offset="0" stop-color="#fff" stop-opacity=".2"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient><path d="M17.02 1H6.98A5.98 5.98 0 0 0 1 6.98v10.04C1 20.32 3.68 23 6.98 23h10.04c3.3 0 5.98-2.68 5.98-5.98V6.98C23 3.68 20.32 1 17.02 1z" fill="url(#b)"/></svg>
+												</span>
+											</a>
+										</span>
+									<?php endif; ?>
+									<?php if ( get_theme_mod("vimeo_social") ) : ?>
+										<span class="socialicon">
+											<a href="<?php echo get_theme_mod("vimeo_social") ?>" target="_blank" rel="noopener">
+												<span class="socialicon__icon"><svg height="32" width="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" ><path clip-rule="evenodd" d="M31.86 7.2c.24-1.36.23-2.76-.6-3.81-1.15-1.48-3.6-1.54-5.29-1.28-1.37.22-6 2.3-7.58 7.26 2.8-.22 4.26.2 4 3.32-.12 1.3-.77 2.74-1.5 4.1-.83 1.59-2.4 4.7-4.46 2.45-1.86-2-1.72-5.86-2.15-8.43-.23-1.43-.48-3.23-.95-4.7-.4-1.28-1.31-2.82-2.44-3.15-1.2-.36-2.7.2-3.57.73C4.53 5.35 2.42 7.72 0 9.67v.18c.48.46.6 1.22 1.31 1.33 1.66.25 3.24-1.57 4.35.32.67 1.15.88 2.42 1.3 3.67.58 1.66 1.03 3.46 1.5 5.37.79 3.23 1.77 8.06 4.52 9.25 1.4.6 3.52-.2 4.58-.85 2.9-1.74 5.15-4.26 7.09-6.83 4.41-6.06 6.85-12.94 7.21-14.9z" fill="#00ADEF" fill-rule="evenodd"/></svg>
+												</span>
+											</a>
+										</span>
+									<?php endif; ?>
 								</div>
 							</div>
 						</div>

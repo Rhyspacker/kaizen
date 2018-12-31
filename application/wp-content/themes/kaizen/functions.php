@@ -7,83 +7,61 @@
  * @package kaizen
  */
 
-if ( ! function_exists( 'kaizen_setup' ) ) :
-	/**
-	 * Sets up theme defaults and registers support for various WordPress features.
-	 *
-	 * Note that this function is hooked into the after_setup_theme hook, which
-	 * runs before the init hook. The init hook is too late for some features, such
-	 * as indicating support for post thumbnails.
-	 */
-	function kaizen_setup() {
-		/*
-		 * Make theme available for translation.
-		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on kaizen, use a find and replace
-		 * to change 'kaizen' to the name of your theme in all the template files.
-		 */
-		load_theme_textdomain( 'kaizen', get_template_directory() . '/languages' );
+	// Remove Emojis
+	remove_action('wp_head', 'print_emoji_detection_script', 7);
+	remove_action('wp_print_styles', 'print_emoji_styles');
 
-		// Add default posts and comments RSS feed links to head.
-		add_theme_support( 'automatic-feed-links' );
+	// WP Head Cleanup
+	function my_head_cleanup() {
+		// Category Feeds
+		remove_action( 'wp_head', 'feed_links_extra', 3 );
 
-		/*
-		 * Let WordPress manage the document title.
-		 * By adding theme support, we declare that this theme does not use a
-		 * hard-coded <title> tag in the document head, and expect WordPress to
-		 * provide it for us.
-		 */
-		add_theme_support( 'title-tag' );
+		// Post and Comment Feeds
+		remove_action( 'wp_head', 'feed_links', 2 );
 
-		/*
-		 * Enable support for Post Thumbnails on posts and pages.
-		 *
-		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-		 */
-		add_theme_support( 'post-thumbnails' );
+		// EditURI link
+		remove_action( 'wp_head','rsd_link' );
 
-		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'kaizen' ),
-		) );
+		// Windows Live Writer
+		remove_action( 'wp_head','wlwmanifest_link' );
 
-		/*
-		 * Switch default core markup for search form, comment form, and comments
-		 * to output valid HTML5.
-		 */
-		add_theme_support( 'html5', array(
-			'search-form',
-			'comment-form',
-			'comment-list',
-			'gallery',
-			'caption',
-		) );
+		// index link
+		remove_action( 'wp_head','index_rel_link' );
 
-		// Set up the WordPress core custom background feature.
-		add_theme_support( 'custom-background', apply_filters( 'kaizen_custom_background_args', array(
-			'default-color' => 'ffffff',
-			'default-image' => '',
-		) ) );
+		// previous link
+		remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 );
 
-		// Add theme support for selective refresh for widgets.
-		add_theme_support( 'customize-selective-refresh-widgets' );
+		// start link
+		remove_action( 'wp_head', 'start_post_rel_link', 10,0 );
 
-		/**
-		 * Add support for core custom logo.
-		 *
-		 * @link https://codex.wordpress.org/Theme_Logo
-		 */
+		// Links for Adjacent Posts
+		remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
+
+		// WP version
+		remove_action( 'wp_head', 'wp_generator' );
+	};
+	add_action('init', 'my_head_cleanup');
+
+	// Remove comment support
+	//
+	// - Removes from admin menu
+	add_action( 'admin_menu', 'my_remove_admin_menus' );
+	function my_remove_admin_menus() {
+	    remove_menu_page( 'edit-comments.php' );
 	}
-endif;
-add_action( 'after_setup_theme', 'kaizen_setup' );
+	// - Removes from post and pages
+	add_action('init', 'remove_comment_support', 100);
 
-
-/**
- * Load Jetpack compatibility file.
- */
-if ( defined( 'JETPACK__VERSION' ) ) {
-	require get_template_directory() . '/inc/jetpack.php';
-}
+	function remove_comment_support() {
+	    remove_post_type_support( 'post', 'comments' );
+	    remove_post_type_support( 'page', 'comments' );
+	}
+	// - Removes from admin bar
+	function kaizen_admin_bar_render() {
+	    global $wp_admin_bar;
+	    $wp_admin_bar->remove_menu('comments');
+	}
+	add_action( 'wp_before_admin_bar_render', 'kaizen_admin_bar_render' );
 
 /*
 // ========================================= //
@@ -96,6 +74,15 @@ add_action('admin_menu', function() {
     remove_menu_page('edit.php');
 });
 
+function remove_admin_bar_links() {
+    global $wp_admin_bar;
+    $wp_admin_bar->remove_menu('new-post');
+    $wp_admin_bar->remove_menu('new-page');
+    $wp_admin_bar->remove_menu('new-cpt');
+}
+add_action( 'wp_before_admin_bar_render', 'remove_admin_bar_links' );
+
+
 // turn off pagination for the archive page
 add_action('parse_query', function($query) {
   if (is_post_type_archive('work')) {
@@ -103,23 +90,64 @@ add_action('parse_query', function($query) {
   }
 });
 
-// Responsive ACF images
-function awesome_acf_responsive_image($image_id,$image_size,$max_width){
+// Create custom site identity fields for social
 
-	// check the image ID is not blank
-	if($image_id != '') {
+function kaizen_new_customiser_settings($wp_customize) {
 
-		// set the default src image size
-		$image_src = wp_get_attachment_image_url( $image_id, $image_size );
+	// Remove unneccessary sections from customiser
+	$wp_customize->remove_section( 'title_tagline');
+  $wp_customize->remove_section( 'static_front_page');
+  $wp_customize->remove_section( 'custom_css');
 
-		// set the srcset with various image sizes
-		$image_srcset = wp_get_attachment_image_srcset( $image_id, $image_size );
+	$wp_customize->add_section( 'social_links', array(
+    'title' => 'Social Links',
+    'priority' => 35,
+  ));
 
-		// generate the markup for the responsive image
-		echo 'src="'.$image_src.'" srcset="'.$image_srcset.'" sizes="(max-width: '.$max_width.') 100vw, '.$max_width.'"';
+	$wp_customize->add_setting('facebook_social');
+	$wp_customize->add_control(
+	    new WP_Customize_Control(
+	        $wp_customize,
+	        'facebook_social',
+	        array(
+	            'label' => 'Facebook Social Link',
+							'section' => 'social_links',
+	            'settings' => 'facebook_social',
+	            'type' => 'url',
+	        )
+	    )
+	);
 
-	}
+	$wp_customize->add_setting('instagram_social');
+	$wp_customize->add_control(
+	    new WP_Customize_Control(
+	        $wp_customize,
+	        'instagram_social',
+	        array(
+	            'label' => 'Instagram Social Link',
+							'section' => 'social_links',
+	            'settings' => 'instagram_social',
+	            'type' => 'url',
+	        )
+	    )
+	);
+
+	$wp_customize->add_setting('vimeo_social');
+	$wp_customize->add_control(
+	    new WP_Customize_Control(
+	        $wp_customize,
+	        'vimeo_social',
+	        array(
+	            'label' => 'Vimeo Social Link',
+							'section' => 'social_links',
+	            'settings' => 'vimeo_social',
+	            'type' => 'url',
+	        )
+	    )
+	);
 }
+
+add_action('customize_register', 'kaizen_new_customiser_settings', 50);
 
 /*
 // ========================================= //
