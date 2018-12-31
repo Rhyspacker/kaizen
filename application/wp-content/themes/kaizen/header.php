@@ -2,15 +2,24 @@
 /**
  * The header for our theme
  *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package kaizen
  */
 
-?>
+$object = get_queried_object();
 
+global $meta_description_work_item;
+
+// Get meta description for either page or work item
+if ( get_field("meta_description", $object->name) ) :
+	$meta_description = get_field("meta_description", $object->name);
+elseif ( $meta_description_work_item ) :
+	$meta_description = $GLOBALS[ 'meta_description_work_item' ];
+endif;
+
+?>
 
 <!doctype html>
 <html <?php language_attributes(); ?> class="no-js">
@@ -19,22 +28,22 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
 	<meta name="HandheldFriendly" content="True">
 	<title><?php if ( is_front_page() ) : ?>Home | <?php endif; ?><?php wp_title('|',true,'right');?><?php bloginfo('name'); ?></title>
-	<link rel="canonical" href="http://example.com/home.html">
-	<meta name="description" content="" />
+	<link rel="canonical" href="<?php echo get_permalink() ?>">
+	<meta name="description" content="<?php echo $meta_description; ?>" />
 	<meta name="name" content="Kaizen Creative"/>
 	<meta property="og:type" content="website" />
 	<meta property="og:site_name" content="Kaizen Creative" />
-	<meta property="og:url" content="http://example.com/home.html" />
-	<meta property="og:title" content="<?php wp_title('|',true,'right');?><?php bloginfo('name'); ?>" />
-	<meta property="og:description" content="" />
-	<meta property="og:image" content="http://example.com/img/content/share-default.jpg" />
+	<meta property="og:url" content="<?php echo get_permalink() ?>" />
+	<meta property="og:title" content="<?php if ( is_front_page() ) : ?>Home | <?php endif; ?><?php wp_title('|',true,'right');?><?php bloginfo('name'); ?>" />
+	<meta property="og:description" content="<?php echo $meta_description; ?>" />
+	<meta property="og:image" content="<?php echo home_url() ?>/wp-content/themes/kaizen/img/content/share-default.jpg" />
 	<meta property="og:image:width" content="1200" />
 	<meta property="og:image:height" content="630" />
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:site" content="@" />
-	<meta name="twitter:title" content="<?php wp_title('|',true,'right');?><?php bloginfo('name'); ?> Kaizen Creative" />
-	<meta name="twitter:description" content="" />
-	<meta name="twitter:image" content="http://example.com/img/content/share-default.jpg" />
+	<meta name="twitter:title" content="<?php if ( is_front_page() ) : ?>Home | <?php endif; ?><?php wp_title('|',true,'right');?><?php bloginfo('name'); ?>" />
+	<meta name="twitter:description" content="<?php echo $meta_description; ?>" />
+	<meta name="twitter:image" content="<?php echo home_url() ?>/wp-content/themes/kaizen/img/content/share-default.jpg" />
 	<link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri() ?>/img/icons/apple-touch-icon.png">
 	<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri() ?>/img/icons/favicon-32x32.png" sizes="32x32">
 	<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri() ?>/img/icons/favicon-16x16.png" sizes="16x16">
@@ -48,7 +57,6 @@
 </head>
 
 <body>
-
 	<?php if ( is_front_page() ) : ?>
 	<div class="hero">
 		<div class="hero__media">
@@ -74,15 +82,15 @@
 		<div class="header__wpr">
 			<div class="header__inner">
 				<div class="header__logo">
-					<a href="/">
+					<a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Home' ) ) ); ?>">
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2600 2600" width="50" height="50" class="icon icon--logo" aria-hidden="true"><g fill-rule="evenodd" clip-rule="evenodd"><path fill="#666" d="M25.53 1938.25c0-112.12-1.76-224.27.6-336.34 1.6-75.35 35.2-138.18 89.5-189.98 29.85-28.46 66.96-45.66 102.5-65.04a289709.05 289709.05 0 0 1 650.66-353.7c66.12-35.83 131.27-73.57 199.2-105.92 58.02-27.63 119.64-43.42 183.65-48.6 116.45-9.45 225.39 15.26 327.77 71.8 72.02 39.76 144.98 77.87 216.77 118.1 4.45 2.5 11.5 4.1 11.9 9.07.49 5.84-7.16 6.51-11.43 8.86a21343.1 21343.1 0 0 1-325.27 175.76c-8.23 4.35-14.85 4.07-22.87-.07-23.15-11.95-45.94-25.04-70.14-34.43-57.97-22.49-115.77-21.6-171.82 7.38-180.26 93.22-359.14 189.02-537.66 285.51-86.8 46.92-173.62 93.8-259.6 142.23-27.06 15.24-42.8 38.36-52.82 66.6-1.55 4.35-1.4 8.78-1.42 13.23-.62 134.47-1.6 268.94-1.62 403.4 0 40.72-17.2 70.9-50.6 92.29-65.23 41.77-131.85 81.28-198.36 120.98-29.33 17.51-63.38 3.23-76.95-25.04-2.39-4.98-2.34-10.06-2.34-15.25v-340.84h.35z"/><path fill="#666" d="M2574.37 671.53c0 102.06-.67 204.13.18 306.19.97 115.88-52.14 199.38-151.8 253.98-213.24 116.82-427.08 232.51-640.73 348.56a48666.59 48666.59 0 0 1-221.15 119.42c-66.22 35.53-137.15 55.58-211.89 61.76-104.34 8.63-204.16-8.45-297.82-56.21-83.6-42.63-165.68-88.1-247.5-134.04-15.7-8.81-15.55-9.44.01-17.81 96.73-52.04 193.49-104.02 290.27-155.95 13.13-7.04 26.53-13.56 39.63-20.63 5.84-3.15 10.9-2.93 16.76.21 18.7 10.02 37.4 20.13 56.57 29.2 62.79 29.73 125.85 30.62 188.1-1.15 143.63-73.3 285.4-150.1 427.46-226.34 122.37-65.67 244.76-131.31 365.76-199.5 38.82-21.89 58.19-54.94 58.23-99.62.05-73.38.27-146.76.78-220.13.4-56.61 2.19-113.22 1.77-169.82-.28-38.64 17.26-66.64 48.1-86.5 45.39-29.22 91.78-56.88 137.88-85 21.29-12.98 42.52-26.15 64.45-38 35.18-19.02 74.93 8.47 75.42 42.75 1.65 116.21-.04 232.42-.48 348.63z"/><path fill="#555" d="M480.74 646.38c.76-48.8-.85-108.03 1.3-167.25.25-6.85 2.53-10.56 8.57-13.83 199.7-108.23 399.25-216.73 598.94-324.97 34.67-18.8 68.3-39.98 105.9-52.67 89.43-30.2 176.08-22.84 259.2 21.92 109.84 59.12 220.1 117.49 329 178.3 107.58 60.06 215.86 118.81 324.1 177.63 8.38 4.55 11.54 9.95 11.66 19.22 1.56 117.33 1.49 234.67 1.26 352-.03 12.62-1.02 13.27-12.5 7.14-97.54-52.11-195-104.37-292.52-156.52-140.53-75.15-280.84-150.74-421.75-225.17-64-33.81-129.67-31.8-192.84 1.87-209.98 111.9-419.36 224.91-629 337.46a10023.72 10023.72 0 0 1-75.99 40.3c-13.76 7.25-14.97 6.54-15.07-9.54-.21-35.02-.2-70.04-.25-105.05-.04-23.47 0-46.94 0-80.84z"/><path fill="#545454" d="M2120.72 1941.57c0 58.12-.23 116.24.22 174.35.08 9.85-2.84 15.38-11.66 20.14a342258.03 342258.03 0 0 0-640.63 346.6c-40.24 21.83-81.53 40.09-127.5 45.45-66.6 7.77-129.87-2.68-189.13-34.78-220.37-119.36-440.7-238.8-661.21-357.9-8.47-4.56-8.99-10.89-9.04-18.38-.37-49.55-.85-99.1-.95-148.64-.13-67.8.01-135.6.1-203.4.02-14.01.55-14.29 12.6-7.81 171.56 92.18 343.07 184.45 514.67 276.55 63.98 34.35 127.56 69.51 192.4 102.18 71.17 35.87 142.69 30.93 212.09-6.15 173.08-92.48 345.87-185.5 518.79-278.29 58.4-31.34 116.8-62.72 175.26-93.96 12.28-6.57 12.54-6.3 12.55 7.46.04 58.86.02 117.72.02 176.58h1.42z"/><path fill="#666" d="M24.66 693.09V325.44c0-39.43 42.58-65.22 77.07-45.52 42.66 24.36 84.52 50.13 126.5 75.67 28.62 17.4 58.13 33.54 84.86 53.77 24.66 18.67 38.55 43.5 38.83 75.5 1.17 137.02 2.47 274.04 4.37 411.05.46 32.56 16.94 58.14 43.9 74.88 33.8 21 69.23 39.36 103.96 58.85 1.62.91 3.19 1.95 4.86 2.76 8.63 4.2 8.27 7.95-.04 12.46-36.66 19.86-73.16 40-109.78 59.92-73.23 39.86-146.55 79.56-219.69 119.6-6 3.28-10.52 3.58-16.33-.08C78.1 1170.69 29.6 1094.47 25.94 993.49c-3.99-110.15-.71-220.43-1.29-300.4zM2575.45 1934.76c0 113.98-.7 227.96.47 341.92.32 31.1-38.78 66.04-76.34 44.37-65.46-37.77-129.93-77.21-194.23-116.94-26.02-16.07-45.63-36.97-54.63-66.63-4.6-15.15-3.86-31-3.95-46.56-.76-126.26-1.36-252.52-1.56-378.78-.07-38.35-17.92-66.42-49.35-85.57-31.45-19.15-64.33-35.96-96.57-53.8-2.94-1.63-5.74-3.5-8.73-4.98-7.5-3.73-7.51-6.92-.03-11.02 30.04-16.44 59.85-33.3 89.9-49.72 79.07-43.19 158.3-86.08 237.2-129.55 8.8-4.84 15.26-4.39 23.41.8 65.52 41.72 108.26 99.77 127.78 175.1a210.11 210.11 0 0 1 6.81 53.97c-.36 109.13-.18 218.26-.18 327.4z"/></g></svg>
-			</a>
+					</a>
 				</div>
 				<div class="header__nav" id="header-navigation" role="region" tabindex="-1">
 					<ul class="header__nav__list">
-						<li><a href="home.html" class="btn btn--navlink">Home</a></li>
-						<li><a href="work.html" class="btn btn--navlink">Our work</a></li>
-						<li><a href="contact.html" class="btn btn--navlink">Contact</a></li>
+						<li><a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Home' ) ) ); ?>" class="btn btn--navlink">Home</a></li>
+						<li><a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Home' ) ) ); ?>work" class="btn btn--navlink">Our work</a></li>
+						<li><a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Home' ) ) ); ?>contact" class="btn btn--navlink">Contact</a></li>
 					</ul>
 				</div>
 				<button class="header__nav__trigger" aria-controls="header-navigation" aria-expanded="false">

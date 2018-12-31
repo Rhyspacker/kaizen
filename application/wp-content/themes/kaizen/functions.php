@@ -73,78 +73,10 @@ if ( ! function_exists( 'kaizen_setup' ) ) :
 		 *
 		 * @link https://codex.wordpress.org/Theme_Logo
 		 */
-		add_theme_support( 'custom-logo', array(
-			'height'      => 250,
-			'width'       => 250,
-			'flex-width'  => true,
-			'flex-height' => true,
-		) );
 	}
 endif;
 add_action( 'after_setup_theme', 'kaizen_setup' );
 
-/**
- * Set the content width in pixels, based on the theme's design and stylesheet.
- *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width
- */
-function kaizen_content_width() {
-	// This variable is intended to be overruled from themes.
-	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
-	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-	$GLOBALS['content_width'] = apply_filters( 'kaizen_content_width', 640 );
-}
-add_action( 'after_setup_theme', 'kaizen_content_width', 0 );
-
-/**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-function kaizen_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'kaizen' ),
-		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'kaizen' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-}
-add_action( 'widgets_init', 'kaizen_widgets_init' );
-
-/**
- * Enqueue scripts and styles.
- */
-function kaizen_scripts() {
-	wp_enqueue_style( 'kaizen-style', get_stylesheet_uri() );
-
-	wp_enqueue_script( 'kaizen', get_template_directory_uri() . '/js/kaizen.js', array(), '20151215', true );
-}
-add_action( 'wp_enqueue_scripts', 'kaizen_scripts' );
-
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
-
-/**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Functions which enhance the theme by hooking into WordPress.
- */
-require get_template_directory() . '/inc/template-functions.php';
-
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
 
 /**
  * Load Jetpack compatibility file.
@@ -152,3 +84,137 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+/*
+// ========================================= //
+	Custom Functions
+// ========================================= //
+*/
+
+// Remove Posts from admin menu
+add_action('admin_menu', function() {
+    remove_menu_page('edit.php');
+});
+
+// turn off pagination for the archive page
+add_action('parse_query', function($query) {
+  if (is_post_type_archive('work')) {
+    $query->set('nopaging', 1);
+  }
+});
+
+// Responsive ACF images
+function awesome_acf_responsive_image($image_id,$image_size,$max_width){
+
+	// check the image ID is not blank
+	if($image_id != '') {
+
+		// set the default src image size
+		$image_src = wp_get_attachment_image_url( $image_id, $image_size );
+
+		// set the srcset with various image sizes
+		$image_srcset = wp_get_attachment_image_srcset( $image_id, $image_size );
+
+		// generate the markup for the responsive image
+		echo 'src="'.$image_src.'" srcset="'.$image_srcset.'" sizes="(max-width: '.$max_width.') 100vw, '.$max_width.'"';
+
+	}
+}
+
+/*
+// ========================================= //
+	Custom Image Sizes
+// ========================================= //
+*/
+
+// Work
+add_image_size( "work_item_sm", 515, 305, true );
+add_image_size( "work_item_lg", 860, 470, true );
+add_image_size( "work_item_xlg", 1200, 600, true );
+
+// Team
+add_image_size( "team_member", 400, 400, true );
+
+/*
+// ========================================= //
+	Custom Post Types
+// ========================================= //
+*/
+
+function work_post_type() {
+	$labels = array(
+		'name' => 'Work',
+		'singular_name' => 'Work',
+		'add_new' => 'Add Work Item',
+		'all_items' => 'All Items',
+		'add_new_item' => 'Add Work Item',
+		'edit_item' => 'Edit Work Item',
+		'new_item' => 'New Work Item',
+		'view_item' => 'View Work Item',
+		'search_item' => 'Search Work',
+		'not_found' => 'No items found',
+		'not_found_in_trash' => 'No items found in trash',
+		'parent_item_colon' => 'Parent Item'
+	);
+	$args = array(
+		'labels' => $labels,
+		'public' => true,
+		'has_archive' => true,
+		'publicly_queryable' => true,
+		'query_var' => true,
+		'rewrite' => true,
+		'capability_type' => 'post',
+		'hierarchical' => false,
+		'supports' => array(
+			'title',
+			'custom-fields',
+			'editor'
+		),
+		'menu_position' => 4,
+		'exclude_from_search' => true,
+		'show_ui' => true, // defaults to true so don't have to include
+		'show_in_menu' => true, // defaults to true so don't have to include
+	);
+
+	register_post_type('work', $args);
+}
+add_action( 'init', 'work_post_type');
+
+function team_post_type() {
+	$labels = array(
+		'name' => 'Team',
+		'singular_name' => 'Team Member',
+		'add_new' => 'Add Team Member',
+		'all_items' => 'All Team Members',
+		'add_new_item' => 'Add Team Member',
+		'edit_item' => 'Edit Team Member',
+		'new_item' => 'New Team Member',
+		'view_item' => 'View Team Member',
+		'search_item' => 'Search Team Members',
+		'not_found' => 'No Team Members found',
+		'not_found_in_trash' => 'No Team Members found in trash',
+		'parent_item_colon' => 'Parent Item'
+	);
+	$args = array(
+		'labels' => $labels,
+		'public' => true,
+		'has_archive' => true,
+		'publicly_queryable' => true,
+		'query_var' => true,
+		'rewrite' => true,
+		'capability_type' => 'post',
+		'hierarchical' => false,
+		'supports' => array(
+			'title',
+			'custom-fields',
+			'editor'
+		),
+		'menu_position' => 5,
+		'exclude_from_search' => true,
+		'show_ui' => true, // defaults to true so don't have to include
+		'show_in_menu' => true, // defaults to true so don't have to include
+	);
+
+	register_post_type('team', $args);
+}
+add_action( 'init', 'team_post_type');
