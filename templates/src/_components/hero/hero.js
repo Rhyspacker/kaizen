@@ -6,6 +6,7 @@ app.hero = {
 
   config: {
     component: '.hero',
+    heroVideo: '.hero__media video',
     heroScrollTrigger: '.hero__scroll'
   },
 
@@ -16,6 +17,17 @@ app.hero = {
     var self = this;
 
     var hero = document.querySelector(self.config.component);
+    var video = hero.querySelector(self.config.heroVideo);
+
+    var mobSource = '<source src="files/videos/hero-mobile.mp4" type="video/mp4">';
+    var deskSource = '<source src="files/videos/hero-desktop.mp4" type="video/mp4">';
+
+    if (self.getWindowWidth() < self.breakpoint) {
+      video.innerHTML = mobSource;
+    }
+    else {
+      video.innerHTML = deskSource;
+    }
 
     if (hero !== null) {
       self.handleScrollClick(hero);
