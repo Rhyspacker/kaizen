@@ -132,15 +132,15 @@ function kaizen_new_customiser_settings($wp_customize) {
 	    )
 	);
 
-	$wp_customize->add_setting('vimeo_social');
+	$wp_customize->add_setting('youtube_social');
 	$wp_customize->add_control(
 	    new WP_Customize_Control(
 	        $wp_customize,
 	        'vimeo_social',
 	        array(
-	            'label' => 'Vimeo Social Link',
+	            'label' => 'Youtube Social Link',
 							'section' => 'social_links',
-	            'settings' => 'vimeo_social',
+	            'settings' => 'youtube_social',
 	            'type' => 'url',
 	        )
 	    )
