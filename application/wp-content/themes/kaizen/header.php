@@ -10,15 +10,13 @@
 
 $object = get_queried_object();
 
-global $meta_description_work_item;
-
 // Get meta description for either page or work item
-if ( get_field("meta_description", $object->name) ) :
+if ( is_singular('work') ) :
+	$work_description = get_field("meta_description", $object->name);
+	$meta_description = $work_description . "...";
+elseif ( get_field("meta_description", $object->name) ) :
 	$meta_description = get_field("meta_description", $object->name);
-elseif ( $meta_description_work_item ) :
-	$meta_description = $GLOBALS[ 'meta_description_work_item' ];
 endif;
-
 ?>
 
 <!doctype html>
@@ -27,21 +25,21 @@ endif;
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
 	<meta name="HandheldFriendly" content="True">
-	<title><?php if ( is_front_page() ) : ?>Home | <?php endif; ?><?php wp_title('|',true,'right');?><?php bloginfo('name'); ?></title>
+	<title><?php if ( is_front_page() ) : ?>Home | <?php endif; ?><?php wp_title('|',true,'right');?><?php if ( is_singular('work') ) :?>Work | <?php endif ?><?php bloginfo('name'); ?></title>
 	<link rel="canonical" href="<?php echo get_permalink() ?>">
 	<meta name="description" content="<?php echo $meta_description; ?>" />
 	<meta name="name" content="Kaizen Creative"/>
 	<meta property="og:type" content="website" />
 	<meta property="og:site_name" content="Kaizen Creative" />
 	<meta property="og:url" content="<?php echo get_permalink() ?>" />
-	<meta property="og:title" content="<?php if ( is_front_page() ) : ?>Home | <?php endif; ?><?php wp_title('|',true,'right');?><?php bloginfo('name'); ?>" />
+	<meta property="og:title" content="<?php if ( is_front_page() ) : ?>Home | <?php endif; ?><?php wp_title('|',true,'right');?><?php if ( is_singular('work') ) :?>Work | <?php endif ?><?php bloginfo('name'); ?>" />
 	<meta property="og:description" content="<?php echo $meta_description; ?>" />
 	<meta property="og:image" content="<?php echo home_url() ?>/wp-content/themes/kaizen/img/content/share-default.jpg" />
 	<meta property="og:image:width" content="1200" />
 	<meta property="og:image:height" content="630" />
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:site" content="@" />
-	<meta name="twitter:title" content="<?php if ( is_front_page() ) : ?>Home | <?php endif; ?><?php wp_title('|',true,'right');?><?php bloginfo('name'); ?>" />
+	<meta name="twitter:title" content="<?php if ( is_front_page() ) : ?>Home | <?php endif; ?><?php wp_title('|',true,'right');?><?php if ( is_singular('work') ) :?>Work | <?php endif ?><?php bloginfo('name'); ?>" />
 	<meta name="twitter:description" content="<?php echo $meta_description; ?>" />
 	<meta name="twitter:image" content="<?php echo home_url() ?>/wp-content/themes/kaizen/img/content/share-default.jpg" />
 	<link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri() ?>/img/icons/apple-touch-icon.png">

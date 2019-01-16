@@ -21,7 +21,10 @@ $team_member_image = get_field("team_member_image");
 				<a href="<?php the_field('team_member_linkedin') ?>" class="btn">LinkedIn</a>
 			<?php endif; ?>
 			<?php if ( get_field('team_member_twitter') ) : ?>
-				<a href="<?php the_field('team_member_twitter') ?>" class="btn">LinkedIn</a>
+				<a href="<?php the_field('team_member_twitter') ?>" class="btn">Twitter</a>
+			<?php endif; ?>
+			<?php if ( get_field('team_member_instagram') ) : ?>
+				<a href="<?php the_field('team_member_instagram') ?>" class="btn">Instagram</a>
 			<?php endif; ?>
 		</p>
 		<?php endif; ?>
