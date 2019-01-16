@@ -61,9 +61,6 @@ endif;
 	<div class="hero">
 		<div class="hero__media">
 			<video loop muted autoplay>
-				<!-- <source src="files/videos/algeria.webm" type="video/webm"> -->
-				<source src="<?php echo get_template_directory_uri() ?>/files/videos/algeria.mp4" type="video/mp4">
-				<!-- <source src="files/videos/algeria.ogv" type="video/ogg"> -->
 			</video>
 		</div>
 		<div class="hero__logo">
