@@ -1,17 +1,20 @@
 <div class="socialicons {{#if header-social}}socialicons--header{{else}}mb-1{{/if}}" style="margin-left: -10px;">
   <span class="socialicon">
     <a href="https://www.facebook.com/KaizenCreate/" target="_blank" rel="noopener">
-      <span class="socialicon__icon">{{> socialicon-facebook }}</span>
+      <span class="sr-only">Facebook</span>
+      <span class="socialicon__icon" aria-hidden="true">{{> socialicon-facebook }}</span>
     </a>
   </span>
   <span class="socialicon">
     <a href="#" target="_blank" rel="noopener">
-      <span class="socialicon__icon">{{> socialicon-instagram }}</span>
+      <span class="sr-only">Instagram</span>
+      <span class="socialicon__icon" aria-hidden="true">{{> socialicon-instagram }}</span>
     </a>
   </span>
   <span class="socialicon">
     <a href="#" target="_blank" rel="noopener">
-      <span class="socialicon__icon">{{> socialicon-youtube }}</span>
+      <span class="sr-only">Youtube</span>
+      <span class="socialicon__icon" aria-hidden="true">{{> socialicon-youtube }}</span>
     </a>
   </span>
 </div>

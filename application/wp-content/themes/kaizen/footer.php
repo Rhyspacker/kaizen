@@ -12,7 +12,8 @@
 									<?php if ( get_theme_mod("facebook_social") ) : ?>
 										<span class="socialicon">
 											<a href="<?php echo get_theme_mod("facebook_social") ?>" target="_blank" rel="noopener">
-												<span class="socialicon__icon">
+												<span class="sr-only">Facebook</span>
+												<span class="socialicon__icon" aria-hidden="true">
 													<svg xmlns="http://www.w3.org/2000/svg" height="32" width="32" viewBox="0 0 408.79 408.79" >
 					                  <path d="M353.7 0H55.1A55.09 55.09 0 0 0 0 55.09V353.7A55.08 55.08 0 0 0 55.1 408.8h147.27l.25-146.08h-37.95a8.95 8.95 0 0 1-8.95-8.92l-.18-47.09a8.95 8.95 0 0 1 8.95-8.99h37.88v-45.5c0-52.8 32.25-81.55 79.35-81.55h38.65c4.95 0 8.96 4.01 8.96 8.96v39.7c0 4.95-4.01 8.95-8.95 8.96h-23.72c-25.62 0-30.58 12.18-30.58 30.04v39.4h56.29a8.95 8.95 0 0 1 8.89 10l-5.58 47.09a8.96 8.96 0 0 1-8.9 7.9h-50.45l-.25 146.08h87.63a55.08 55.08 0 0 0 55.09-55.09V55.08A55.09 55.09 0 0 0 353.7 0z" fill="#475993"/>
 					                </svg>
@@ -23,7 +24,8 @@
 									<?php if ( get_theme_mod("instagram_social") ) : ?>
 										<span class="socialicon">
 											<a href="<?php echo get_theme_mod("instagram_social") ?>" target="_blank" rel="noopener">
-												<span class="socialicon__icon">
+												<span class="sr-only">Instagram</span>
+												<span class="socialicon__icon" aria-hidden="true">
 													<svg xmlns="http://www.w3.org/2000/svg" height="32" width="32" viewBox="0 0 551.03 551.03" >
 					                  <linearGradient id="a" gradientUnits="userSpaceOnUse" x1="275.52" y1="4.57" x2="275.52" y2="549.72" gradientTransform="matrix(1 0 0 -1 0 554)">
 					                    <stop offset="0" stop-color="#e09b3d"/>
@@ -54,7 +56,8 @@
 									<?php if ( get_theme_mod("youtube_social") ) : ?>
 										<span class="socialicon">
 											<a href="<?php echo get_theme_mod("youtube_social") ?>" target="_blank" rel="noopener">
-												<span class="socialicon__icon">
+												<span class="sr-only">Youtube</span>
+												<span class="socialicon__icon" aria-hidden="true">
 													<svg xmlns="http://www.w3.org/2000/svg" height="32" width="32" viewBox="0 0 461 461">
 		                  			<path d="M365.26 67.4H95.74A95.74 95.74 0 0 0 0 163.13v134.73a95.74 95.74 0 0 0 95.74 95.74h269.52A95.74 95.74 0 0 0 461 297.87V163.14a95.74 95.74 0 0 0-95.74-95.75zM300.5 237.05l-126.06 60.12a5.06 5.06 0 0 1-7.24-4.57v-124a5.06 5.06 0 0 1 7.34-4.52l126.06 63.88a5.06 5.06 0 0 1-.1 9.09z" fill="#f61c0d"/>
 		                			</svg>
